@@ -1,0 +1,22 @@
+{
+  "name": "cloc.io",
+  "version": "1.0.0",
+  "description": "An app to clock in and clock out",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kookydev/cloc.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kookydev/cloc.io/issues"
+  },
+  "homepage": "https://github.com/kookydev/cloc.io#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
