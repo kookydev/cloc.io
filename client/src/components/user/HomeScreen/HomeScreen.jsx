@@ -1,14 +1,14 @@
 import React from "react";
 
-let userData = {
-  userName: "Jacob",
-  password: "1234",
-  authLevel: 1,
-  name: "Jacob Zielinski"
-};
+// let userData = {
+//   userName: "Jacob",
+//   password: "1234",
+//   authLevel: 1,
+//   name: "Jacob Zielinski"
+// };
 
 const HomeScreen = props => {
-  if (props.authLevel === 1) {
+  if (props.userid === 1) {
     return (
       <div>
         <div>{props.holidayRequest} Holiday Request</div>
@@ -16,7 +16,7 @@ const HomeScreen = props => {
         <div>{props.ClockIn} Clock In</div>
       </div>
     );
-  } else if (props.authLevel === 2) {
+  } else if (props.userid === 2) {
     return (
       <div>
          <div>{props.holidayRequest} Holiday Request</div>
@@ -25,7 +25,7 @@ const HomeScreen = props => {
         <div>{props.staff} Staff</div>
       </div>
     );
-  } else if (props.authLevel === 3) {
+  } else if (props.userid === 3) {
     return (
       <div>
        <div>{props.holidayRequest} Holiday Request</div>
