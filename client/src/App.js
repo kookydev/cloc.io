@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Time from './components/user/ClockInOut/Time';
 import AddUser from './components/user/ClockInOut/AddUser';
 import './App.css';
+import RequestLeave from './components/user/RequestLeave/RequestLeave';
 
 
 //Clock in and out pulling from Time.jsx
@@ -34,7 +35,8 @@ class App extends Component {
     return (
       <div className="App">
           <Time onDuty={this.state.onDuty} clockFunc={this.clockingHandler}/>
-          <AddUser/>
+          {/* <AddUser/> */}
+          <RequestLeave/>
       </div>
     );
   }
