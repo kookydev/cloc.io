@@ -10,8 +10,8 @@ const Login = props => {
             id="username"
             type="text"
             placeholder="Enter Username"
-            value={this.state.value}
-            onChange={this.handleChange}
+            value={props.value}
+            onChange={props.handleChange}
           />
 
           <h2>Password</h2>
@@ -19,19 +19,17 @@ const Login = props => {
             id="password"
             type="password"
             placeholder="Enter Password"
-            value={this.state.value}
-            onChange={this.handleChange}
+            value={props.value}
+            onChange={props.handleChange}
           />
           <br />
-          <button 
-          type="submit" 
-          onClick={props.handleSubmit}>
+          <button type="submit" onClick={props.compareDB}>
             Login
           </button>
-          <label>
+          {/* <label>
             <input type="checkbox" checked="checked" name="remember" />
             Remember Me
-          </label>
+          </label> */}
         </div>
       </div>
 

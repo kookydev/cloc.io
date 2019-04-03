@@ -28,3 +28,12 @@ app.get("/express_backend", (req, res) => {
 app.post("/user", (req, res) => {
   taskController.createNewUser(req, res);
 });
+
+app.get("/user", (req, res) => {
+  taskController.readUser(req, res);
+});
+
+app.get("/user/:userid", (req, res) => {
+  taskController.readUser(req, res);
+});
+

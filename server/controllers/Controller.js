@@ -12,3 +12,12 @@ exports.createNewUser = (req, res) => {
   });
 
 };
+
+exports.readUser = (req, res) => {
+  User.findById(req.params.userid, (err, board) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.send(user);
+  });
+};
