@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import TimeTable from './components/user/Rota_Timesheet/TimeTable';
+import RotaTimesheet from './components/user/RotaTimesheet/RotaTimesheet';
 import './App.css';
 
 class App extends Component {
   state={
     currentUser: 2,
-    rotaOrTimes: "rota"}
+    rotaOrTimes: "rota"
+  }
+  
   render() {
     return (
       <div className="App">
-              <TimeTable userid={this.state.currentUser} rotaOrTimes={this.state.rotaOrTimes}/>
+              <RotaTimesheet userid={this.state.currentUser} rotaOrTimes={this.state.rotaOrTimes}/>
 
       </div>
     );

@@ -57,7 +57,7 @@ let dataToDayNumber = date => {
   }
 };
 
-let TimeTable = (props) => {
+let RotaTimesheet = (props) => {
     let userData = PostData.find(object => {
       return object.id === props.userid;
     });
@@ -100,4 +100,4 @@ let TimeTable = (props) => {
     );
 }
 
-export default TimeTable;
+export default RotaTimesheet;
