@@ -41,8 +41,9 @@ const AddUser = props => {
           onChange={props.handleChange}
         />
         <br />
-        User access:
-        <select>
+        Auth Level:
+        <select id="auth_lvl" value={props.value} onChange={props.handleChange}>
+          <option value="default">Select...</option>
           <option value="1">User</option>
           <option value="2">Manager</option>
           <option value="3">Admin</option>
@@ -54,6 +55,16 @@ const AddUser = props => {
           <option value="programmer">Programmer</option>
           <option value="pa">Personal Assistant</option>
           <option value="tester">Tester</option>
+        </select>
+        <br />
+        Manager:
+        <select id="manager" value={props.value} onChange={props.handleChange}>
+          <option value="default">Select...</option>
+          <option value="connor">Connor</option>
+          <option value="kyle">Kyle</option>
+          <option value="kieran">Kieran</option>
+          <option value="alex">Alex</option>
+          <option value="ash">Ash</option>
         </select>
         <br />
         <button onClick={props.createUser}>no profanity</button>

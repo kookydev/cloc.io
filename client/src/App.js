@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 // import TimeTable from "./components/user/Rota_Timesheet/TimeTable";
 // import Login from "./components/user/LogIn/Login";
 import AddUser from './components/user/AddUser/AddUser';
@@ -11,7 +12,8 @@ class App extends Component {
       username: null, 
       password: null,
       auth_lvl: 2,
-      job_role: null
+      job_role: null,
+      manager: null
     };
 
   createUser = () => {
@@ -26,7 +28,8 @@ class App extends Component {
         username: this.state.username,
         password: this.state.password,
         auth_lvl: this.state.auth_lvl,
-        job_role: this.state.job_role
+        job_role: this.state.job_role,
+        manager: this.state.manager
       })
     });
   };
