@@ -10,10 +10,10 @@ const Login = props => {
     <div>
       <div>
         <div>
-          <h2>Login</h2>
+          <h2>Employee ID:</h2>
           <input type="text" placeholder="Enter Username" required />
 
-          <h2>Password</h2>
+          <h2>Password:</h2>
           <input type="password" placeholder="Enter Password" required />
           <br />
           <button type="submit" onClick={handleClick} href=" ">
