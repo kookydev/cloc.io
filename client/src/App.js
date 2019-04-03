@@ -3,6 +3,7 @@ import RotaTimesheet from "./components/user/RotaTimesheet/RotaTimesheet";
 import "./App.css";
 import UserData from "./data/posts";
 import StaffOverview from "./components/manager/StaffOverview/StaffOverview";
+import StaffDetails from "./components/manager/StaffDetails/StaffDetails";
 
 class App extends Component {
   state = {
@@ -13,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <StaffOverview staffData={UserData} />
+        <StaffDetails staffData={UserData} />
       </div>
     );
   }
