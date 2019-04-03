@@ -1,7 +1,5 @@
 import React from 'react'
-let notification = 'hello'
 
-let notify = "Valentino"
 const Notifications  = (props) => {
     
         if (!("Notification" in window)) {
@@ -9,15 +7,14 @@ const Notifications  = (props) => {
         }
         // this should push your new notifications
         else if (Notification.permission === "granted") {
-          let notification = new Notification(props.notification);
+         new Notification(props.notifyid);
           Notification.onclose = function() {
-            //   alert('Hello!')
           };
         }
         else if (Notification.permission !== "denied") {
           Notification.requestPermission().then(function (permission) {
             if (permission === "granted") {
-              let notification = new Notification("You will be notified when something comes up!");
+              new Notification("You will be notified when something comes up!");
             }
           });
         }
@@ -26,7 +23,7 @@ const Notifications  = (props) => {
     
     return (
         <div>
-
+         
         </div>
       );
 }

@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import HomeScreen from './components/user/HomeScreen/HomeScreen'
+import Notification from './components/user/Notifications/Notifications'
 
 class App extends Component {
   state={
     currentUser: 3,
-    rotaOrTimes: "rota"
+    rotaOrTimes: "rota",
+    notifications: "Notifications are working!"
   }
   
   render() {
     return (
       <div className="App">
       <HomeScreen userid={this.state.currentUser} />
+      <Notification notifyid={this.state.notifications} />
       </div>
     );
   }
