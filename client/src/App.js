@@ -7,7 +7,7 @@ class App extends Component {
   state={
     currentUser: 3,
     rotaOrTimes: "rota",
-    notifications: "Notifications are working!"
+    notifications: "Connor is an asshole"
   }
   
   render() {
