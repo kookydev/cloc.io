@@ -23,7 +23,7 @@ clockOut = () => {
         onClick={this.clockIn}>Clock In
         </button>
 
-        <p>Clock In Time: <span id="ciTime"></span></p>
+        <p>Clock In Time: {this.props.ciTime}</p>
 
         <button 
         disabled={this.props.onDuty ? false : true}
@@ -31,7 +31,7 @@ clockOut = () => {
         onClick={this.clockOut}>Clock Out
         </button>
 
-        <p>Clock Out Time: <span id="coTime"></span></p>
+        <p>Clock Out Time: {this.props.coTime}</p>
       </div>
     )
   }

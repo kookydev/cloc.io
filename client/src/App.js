@@ -18,14 +18,10 @@ class App extends Component {
     console.log(`the onDuty is ${onDuty}`)
     if (onDuty === true) {
       await this.setState({timeIn: time})
-      
     }
     else {
       await this.setState({timeOut: time})
     }
-    document.getElementById("ciTime").innerHTML = (this.state.timeIn);
-    document.getElementById("coTime").innerHTML = (this.state.timeOut);
-    console.log(this.state)
   };
   
   
@@ -33,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Time onDuty={this.state.onDuty} clockFunc={this.clockingHandler}/>
+          <Time onDuty={this.state.onDuty} clockFunc={this.clockingHandler} ciTime={this.state.timeIn} coTime={this.state.timeOut}/>
           <AddUser/>
       </div>
     );

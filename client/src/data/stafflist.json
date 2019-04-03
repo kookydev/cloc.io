@@ -1,0 +1,50 @@
+[
+    {
+        "forname": "Connor",
+        "surname": "Rooney",
+        "username": "connor@mail.com",
+        "password": "password",
+        "auth_lvl": 2,
+        "job_roll": "dev"
+    },
+    {
+        "forname": "Kyle",
+        "surname": "Trotter",
+        "username": "kyle@mail.com",
+        "password": "password",
+        "auth_lvl": 2,
+        "job_roll": "dev"
+    },
+    {
+        "forname": "John",
+        "surname": "Smith",
+        "username": "john@mail.com",
+        "password": "password",
+        "auth_lvl": 2,
+        "job_roll": "dev"
+    },
+    {
+        "forname": "Smith",
+        "surname": "Johnston",
+        "username": "kyle@mail.com",
+        "password": "password",
+        "auth_lvl": 2,
+        "job_roll": "dev"
+    },
+    {
+        "forname": "Ben",
+        "surname": "CN",
+        "username": "connor@mail.com",
+        "password": "password",
+        "auth_lvl": 2,
+        "job_roll": "dev"
+    },
+    {
+        "forname": "Another",
+        "surname": "Name",
+        "username": "kyle@mail.com",
+        "password": "password",
+        "auth_lvl": 2,
+        "job_roll": "dev"
+    }
+]
