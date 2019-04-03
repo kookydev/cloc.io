@@ -41,18 +41,18 @@ class App extends Component {
     let id = this.state.username
     let password = this.state.password
 
-    return (fetch(`/user/${id}/${password}`)
+    return (fetch(`http://localhost:5000/user/${id}&${password}`)
       .then(response => {
-        console.log(response)
-        // return response.json()
+        // console.log(response)
+        return response.json()
       })
       .then(myJson => {
-        
-        console.log( JSON.stringify(myJson))
+        return JSON.stringify(myJson)
       })
-      // .then (data => {
-      //   let returnData = JSON.stringify(data)
-      // })
+      .then (data => {
+        let returnData = JSON.parse(data)
+        console.log(returnData[0])
+      })
       )
     
     // return console.log(this.state.username);
