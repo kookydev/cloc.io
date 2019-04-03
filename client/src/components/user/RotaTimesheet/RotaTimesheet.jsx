@@ -63,7 +63,7 @@ let RotaTimesheet = (props) => {
     });
     return (
       <div>
-        <h1>{props.rotaOrTimes == "rota" ? "Rota" : "Times"} for {userData.name}</h1>
+        <h1>{props.rotaOrTimes === "rota" ? "Rota" : "Times"} for {userData.name}</h1>
         <table responsive>
           <thead>
             <tr>
@@ -74,7 +74,7 @@ let RotaTimesheet = (props) => {
             </tr>
           </thead>
           <tbody>
-          {props.rotaOrTimes == "rota" ? (userData.rota.map(postDetail => {
+          {props.rotaOrTimes === "rota" ? (userData.rota.map(postDetail => {
               return (
                 <tr>
                   <td>{dataToDayString(postDetail[0])}</td>
