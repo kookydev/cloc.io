@@ -1,0 +1,18 @@
+.table {
+    background-color: var(--table-color);
+}
+
+.start {
+    font-family: var(--heading-text);
+    font-weight: 700;
+}
+
+#title {
+    font-family: var(--heading-text);
+    font-weight: 700;
+}
+
+.timeSheetText {
+    font-family: var(--heading-text);
+}
+
