@@ -6,6 +6,7 @@ const RequestLeave = (props) => {
 
     return (  
         <div>
+            {/* form elements to be changed into props to pass down data */}
             <h1>Absence</h1><br/>
             <form>
             <h3>Holiday Request</h3><br/>
