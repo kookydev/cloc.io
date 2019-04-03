@@ -23,6 +23,8 @@ class App extends Component {
     else {
       await this.setState({timeOut: time})
     }
+    document.getElementById("ciTime").innerHTML = (this.state.timeIn);
+    document.getElementById("coTime").innerHTML = (this.state.timeOut);
     console.log(this.state)
   };
   
