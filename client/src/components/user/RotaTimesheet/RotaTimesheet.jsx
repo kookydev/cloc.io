@@ -57,13 +57,13 @@ let dataToDayNumber = date => {
   }
 };
 
-let TimeTable = (props) => {
+let RotaTimesheet = (props) => {
     let userData = PostData.find(object => {
       return object.id === props.userid;
     });
     return (
       <div>
-        <h1>Rota for {userData.name}</h1>
+        <h1>{props.rotaOrTimes === "rota" ? "Rota" : "Times"} for {userData.name}</h1>
         <table responsive>
           <thead>
             <tr>
@@ -74,7 +74,7 @@ let TimeTable = (props) => {
             </tr>
           </thead>
           <tbody>
-            {userData.rota.map(postDetail => {
+          {props.rotaOrTimes === "rota" ? (userData.rota.map(postDetail => {
               return (
                 <tr>
                   <td>{dataToDayString(postDetail[0])}</td>
@@ -83,11 +83,21 @@ let TimeTable = (props) => {
                   <td>{dataToTimeString(postDetail[1])}</td>
                 </tr>
               );
-            })}
+            })) : (userData.times.map(postDetail => {
+              return (
+                <tr>
+                  <td>{dataToDayString(postDetail[0])}</td>
+                  <td>{dataToDayNumber(postDetail[0])}</td>
+                  <td>{dataToTimeString(postDetail[0])}</td>
+                  <td>{dataToTimeString(postDetail[1])}</td>
+                </tr>
+              );
+            }))}
+            
           </tbody>
         </table>
       </div>
     );
 }
 
-export default TimeTable;
+export default RotaTimesheet;
