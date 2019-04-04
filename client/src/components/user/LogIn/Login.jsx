@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 const Login = props => {
   return (
@@ -26,6 +27,7 @@ const Login = props => {
           <button type="submit" onClick={props.compareDB}>
             Login
           </button>
+          <Link to='/home'>Home</Link>
           {/* <label>
             <input type="checkbox" checked="checked" name="remember" />
             Remember Me

@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // import TimeTable from "./components/user/Rota_Timesheet/TimeTable";
 import LoginView from "./views/user/LoginView";
+import HomeScreenView from "./views/user/HomeScreenView";
 import AddUserView from "./views/user/AddUserView";
 import "./App.css";
+
+// import NotificationCont from './components/user/Notifications/NotificationCont'
 
 class App extends Component {
   state = {
@@ -12,9 +15,11 @@ class App extends Component {
     surname: null,
     username: null,
     password: null,
-    auth_lvl: 2,
+    auth_lvl: null,
     job_role: null,
-    manager: null
+    manager: null,
+    currentUser: 3,
+    rotaOrTimes: "rota"
   };
 
   createUser = () => {
@@ -52,6 +57,8 @@ class App extends Component {
       .then(data => {
         let returnData = JSON.parse(data);
         console.log(returnData[0]);
+        this.setState({ auth_lvl: returnData[0].auth_lvl });
+        console.log(this.state.auth_lvl);
       });
 
     // return console.log(this.state.username);
@@ -88,12 +95,19 @@ class App extends Component {
       );
     };
 
+    const homeScreenView = props => {
+      return <HomeScreenView auth_lvl={this.state.auth_lvl} />;
+    };
+
     return (
       <div className="App">
         <Router>
+          <Route path="/home" render={homeScreenView} />
           <Route path="/createuser" render={addUserView} />
           <Route path="/login" render={loginView} />
         </Router>
+
+        {/* <NotificationCont/>  */}
       </div>
     );
   }
