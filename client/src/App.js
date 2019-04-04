@@ -57,7 +57,7 @@ class App extends Component {
       .then(data => {
         let returnData = JSON.parse(data);
         console.log(returnData[0]);
-        this.setState({ auth_lvl: returnData[0].auth_lvl });
+        this.setState({ forename: returnData[0].forename, surname: returnData[0].surname, username: returnData[0].username, password: returnData[0].password, auth_lvl: returnData[0].auth_lvl, job_role: returnData[0].job_role, manager: returnData[0].manager });
         console.log(this.state.auth_lvl);
       });
 
