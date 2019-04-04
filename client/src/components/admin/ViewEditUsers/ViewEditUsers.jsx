@@ -1,7 +1,9 @@
 import React from 'react';
 
 const ViewEditUsers = (props) => {
-    return (  );
+    return ( 
+        <div></div>
+    );
 }
  
 export default ViewEditUsers;
