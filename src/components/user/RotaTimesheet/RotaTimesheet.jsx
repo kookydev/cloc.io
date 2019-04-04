@@ -1,6 +1,8 @@
 import React from "react";
 import PostData from "../../../data/posts.json";
 import './RotaTimesheet.css'
+import Logo from '../../../assets/logo_text.svg'
+
 
 let dataToTimeString = date => {
   date = new Date(date * 1000);
@@ -63,7 +65,11 @@ let RotaTimesheet = (props) => {
       return object.id === props.userid;
     });
     return (
+      <div>
+        <img id="logo" src={Logo}/>
+
       <div className= "table">
+      
         <h1 id="title">{props.rotaOrTimes === "rota" ? "Rota" : "Times"} for {userData.name}</h1>
         <table responsive>
           <thead>
@@ -78,8 +84,8 @@ let RotaTimesheet = (props) => {
           {props.rotaOrTimes === "rota" ? (userData.rota.map(postDetail => {
               return (
                 <tr>
-                  <td>{dataToDayString(postDetail[0])}</td>
-                  <td>{dataToDayNumber(postDetail[0])}</td>
+                  <td className="rotaDetails">{dataToDayString(postDetail[0])}</td>
+                  <td className="rotaDetails">{dataToDayNumber(postDetail[0])}</td>
                   <td>{dataToTimeString(postDetail[0])}</td>
                   <td>{dataToTimeString(postDetail[1])}</td>
                 </tr>
@@ -87,18 +93,24 @@ let RotaTimesheet = (props) => {
             })) : (userData.times.map(postDetail => {
               return (
                 <tr>
-                  <td>{dataToDayString(postDetail[0])}</td>
-                  <td>{dataToDayNumber(postDetail[0])}</td>
+                  <td className="rotaDetails">{dataToDayString(postDetail[0])}</td>
+                  <td className="rotaDetails">{dataToDayNumber(postDetail[0])}</td>
                   <td>{dataToTimeString(postDetail[0])}</td>
                   <td>{dataToTimeString(postDetail[1])}</td>
                 </tr>
               );
             }))}
+
+            
             
           </tbody>
         </table>
       </div>
+      </div>
     );
 }
 
+
 export default RotaTimesheet;
+
+
