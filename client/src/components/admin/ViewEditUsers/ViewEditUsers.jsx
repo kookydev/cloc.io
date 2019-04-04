@@ -96,6 +96,13 @@ class ViewEditUsers extends Component {
         }
     
 
+<<<<<<< HEAD
+=======
+const ViewEditUsers = (props) => {
+    return ( 
+        <div></div>
+    );
+>>>>>>> 4a57b40104c30e785186b181cd57150af3ad1d44
 }
 
  
