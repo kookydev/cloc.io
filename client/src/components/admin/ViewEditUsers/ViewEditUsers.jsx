@@ -94,9 +94,6 @@ class ViewEditUsers extends Component {
                </div>
             );
         }
-    
-
-}
 
  
 export default ViewEditUsers;
