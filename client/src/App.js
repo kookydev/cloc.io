@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
 
-      <HomeScreen authLevel="2" />
+      <HomeScreen authLevel={2} />
       <NotificationCont/> 
 
       </div>

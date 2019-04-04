@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/kookydev/cloc.io#readme",
   "dependencies": {
-    "express": "^4.16.4",
-    "react-router-dom": "^16.8.6"
+    "express": "^4.16.4"
   }
 }
