@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import HomeScreen from './components/user/HomeScreen/HomeScreen'
-import Notification from './components/user/Notifications/Notifications'
+import NotificationCont from './components/user/Notifications/NotificationCont'
 
 class App extends Component {
   state={
@@ -14,7 +14,9 @@ class App extends Component {
     return (
       <div className="App">
       <HomeScreen userid={this.state.currentUser} />
-      <Notification notifyid={this.state.notifications} />
+
+
+      <NotificationCont/> 
       </div>
     );
   }
