@@ -13,9 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <HomeScreen userid={this.state.currentUser} />
-
-
+      <HomeScreen authLevel="2" />
       <NotificationCont/> 
       </div>
     );
