@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import RotaTimesheet from './components/user/RotaTimesheet/RotaTimesheet';
 import './App.css';
-import HomeScreen from './components/user/HomeScreen/HomeScreen';
+
+import HomeScreen from './components/user/HomeScreen/HomeScreen'
+import NotificationCont from './components/user/Notifications/NotificationCont'
 
 import ClockInOutCont from "./components/user/ClockInOut/ClockInOutCont"
 
 
 class App extends Component {
-  state = {
-
+  state={
+    currentUser: 3,
+    rotaOrTimes: "rota",
+    auth: 1
   }
-
+  
+  
   render() {
     return (
       <div className="App">
-        <ClockInOutCont />
+
+      <HomeScreen authLevel={this.state.auth} />
+      <NotificationCont/> 
+
       </div>
     );
   }
