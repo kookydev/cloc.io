@@ -17,11 +17,7 @@ const StaffDetails = props => {
             <th>Name</th>
             <th>Staff Number</th>
             <th>D.O.B.</th>
-            <th>Contacts:</th>
-            <th>Name</th>
-            <th>Relationship</th>
-            <th>Phone 1</th>
-            <th>Phone 2</th>
+            <th>Contacts</th>
             <th>View Rota</th>
             <th>View TimeSheet</th>
             <th>Next Leave Start</th>
@@ -30,17 +26,34 @@ const StaffDetails = props => {
         <tbody>
           {staffData.map(item => {
             return (
-              <tr>
-                <td>
-                  {item.forename} {item.surname}
-                </td>
-                <td>{item.id}</td>
-                <td />
-                <td />
-                <td>{item.rota}</td>
-                <td>{item.times}</td>
-                <td>{item.requests}</td>
-              </tr>
+              <>
+                <tr>
+                  <td>
+                    {item.forename} {item.surname}
+                  </td>
+                </tr>
+                <tr>
+                  <td>{item.id}</td>
+                </tr>
+                <tr>
+                  <td />
+                </tr>
+                <tr>
+                  <td />
+                  <td />
+                  <td />
+                  <td />
+                </tr>
+                <tr>
+                  <td>{item.rota}</td>
+                </tr>
+                <tr>
+                  <td>{item.times}</td>
+                </tr>
+                <tr>
+                  <td>{item.requests}</td>
+                </tr>
+              </>
             );
           })}
         </tbody>
