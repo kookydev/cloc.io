@@ -94,15 +94,6 @@ class ViewEditUsers extends Component {
                </div>
             );
         }
-    
-
-
-const ViewEditUsers = (props) => {
-    return ( 
-        <div></div>
-    );
-
-}
 
  
 export default ViewEditUsers;
