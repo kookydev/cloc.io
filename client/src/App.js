@@ -1,24 +1,24 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // import TimeTable from "./components/user/Rota_Timesheet/TimeTable";
-import Login from "./components/user/LogIn/Login";
-// import AddUser from './components/user/AddUser/AddUser';
+import LoginView from "./views/user/LoginView";
+import AddUserView from "./views/user/AddUserView";
 import "./App.css";
 
 class App extends Component {
   state = {
-      forename: null,
-      surname: null,
-      username: null, 
-      password: null,
-      auth_lvl: 2,
-      job_role: null,
-      manager: null
-    };
+    forename: null,
+    surname: null,
+    username: null,
+    password: null,
+    auth_lvl: 2,
+    job_role: null,
+    manager: null
+  };
 
   createUser = () => {
-
-    return fetch(`http://localhost:5000/user`, {
+    return fetch(`http://localhost:5000/createuser`, {
       method: "post",
       headers: {
         "Content-type": "application/json"
@@ -35,43 +35,65 @@ class App extends Component {
     });
   };
 
-  compareDB = (e)  => {
-    e.preventDefault()
+  compareDB = e => {
+    e.preventDefault();
 
-    let id = this.state.username
-    let password = this.state.password
+    let id = this.state.username;
+    let password = this.state.password;
 
-    return (fetch(`http://localhost:5000/user/${id}&${password}`)
+    return fetch(`http://localhost:5000/createuser/${id}&${password}`)
       .then(response => {
         // console.log(response)
-        return response.json()
+        return response.json();
       })
       .then(myJson => {
-        return JSON.stringify(myJson)
+        return JSON.stringify(myJson);
       })
-      .then (data => {
-        let returnData = JSON.parse(data)
-        console.log(returnData[0])
-      })
-      )
-    
+      .then(data => {
+        let returnData = JSON.parse(data);
+        console.log(returnData[0]);
+      });
+
     // return console.log(this.state.username);
-  }
-  
+  };
+
   handleChange = event => {
     this.setState({ [event.target.id]: event.target.value });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
-  }
+  };
 
   render() {
+    const addUserView = props => {
+      return (
+        <AddUserView
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          createUser={this.createUser}
+          value={this.state.value}
+        />
+      );
+    };
+
+    const loginView = props => {
+      return (
+        <LoginView
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          compareDB={this.compareDB}
+          value={this.state.value}
+        />
+      );
+    };
+
     return (
       <div className="App">
-        {/* <TimeTable userid={this.state.currentUser} /> */}
-        <Login compareDB={this.compareDB} handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
-        {/* <AddUser handleChange={this.handleChange} handleSubmit={this.handleSubmit} createUser={this.createUser} value={this.state.value}/> */}
+        <Router>
+          <Route path="/createuser" render={addUserView} />
+          <Route path="/login" render={loginView} />
+        </Router>
       </div>
     );
   }

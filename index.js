@@ -25,14 +25,20 @@ app.get("/express_backend", (req, res) => {
   res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT :)" });
 });
 
-app.post("/user", (req, res) => {
-  
+app.post("/createuser", (req, res) => {
+  console.log('test1')
   taskController.createNewUser(req, res);
 });
 
 
-app.get("/user/:userName&:password", (req, res) => {
-  // console.log(req)
+app.get("/createuser/:userName&:password", (req, res) => {
+  console.log('test2')
   taskController.readUser(req, res);
+});
+
+// app.use('/static', express.static(path.join(__dirname, './client/build//static')));
+
+app.get('*', (req, res, next) => {
+ res.sendFile('/index.html')
 });
 
