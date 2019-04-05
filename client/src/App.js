@@ -6,11 +6,15 @@ import LoginView from "./views/user/LoginView";
 import HomeScreenView from "./views/user/HomeScreenView";
 import AddUserView from "./views/user/AddUserView";
 import "./App.css";
+import "./components/user/LogIn/Login.css";
 import HomeScreen from "./components/user/HomeScreen/HomeScreen";
 import StaffDetails from "./components/manager/StaffDetails/StaffDetails";
 import UserData from "./data/posts.json";
 import StaffOverview from "./components/manager/StaffOverview/StaffOverview";
 import NotificationCont from "./components/user/Notifications/NotificationCont"
+
+
+import ClockInOutCont from "./components/user/ClockInOut/ClockInOutCont"
 
 
 class App extends Component {
@@ -116,7 +120,6 @@ class App extends Component {
           <Route path="/login" render={loginView} />
         </Router>
 
-        {/* <NotificationCont/>  */}
       </div>
     );
   }
