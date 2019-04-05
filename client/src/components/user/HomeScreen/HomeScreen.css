@@ -33,6 +33,7 @@ body {
     margin-bottom: auto;
     font-size: 25px;
     font-weight: 900;
+    text-decoration: none;
 }
 
 .timesheet {
@@ -44,6 +45,7 @@ body {
     margin-bottom: auto;
     font-size: 25px;
     font-weight: 900;
+    text-decoration: none;
 }
 
 .clockin {
@@ -55,6 +57,7 @@ body {
     margin-bottom: auto;
     font-size: 25px;
     font-weight: 900;
+    text-decoration: none;
 }
 
 .staff {
@@ -66,6 +69,7 @@ body {
     margin-bottom: auto;
     font-size: 25px;
     font-weight: 900;
+    text-decoration: none;
 }
 
 #icon5 {
@@ -105,4 +109,5 @@ body {
     margin-top: auto;
     margin-bottom: auto;
     font-size: 25px;
+    text-decoration: none;
 }

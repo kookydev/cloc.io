@@ -67,13 +67,16 @@ let RotaTimesheet = (props) => {
     return (
       <div>
       <div>
+      <button className="button">Button</button>
         <img id="logo" src={Logo}/>
+
+        
 
       </div>
 
       <div className= "table">
       
-        <h1 id="title">{props.rotaOrTimes === "rota" ? "Rota" : "Times"} for {userData.name}</h1>
+        <h1 id="title">{props.rotaOrTimes === "rota" ? "Rota" : "Times"} for {userData.forename}</h1>
         <table responsive>
           <thead>
             <tr>
@@ -116,6 +119,6 @@ let RotaTimesheet = (props) => {
 
 
 
-
-export default RotaTimesheet
+export default RotaTimesheet;
 export {dataToTimeString, dataToDayString, dataToDayNumber};
+
