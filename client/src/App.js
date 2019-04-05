@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import RotaTimesheet from "./components/user/RotaTimesheet/RotaTimesheet";
 import "./App.css";
@@ -16,10 +15,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-      <HomeScreen authLevel={2} rotaOrTimes = {this.state.rotaOrTimes}/> 
-      <NotificationCont/> 
-
+      <RotaTimesheet userid={this.state.currentUser} rotaOrTimes={this.state.rotaOrTimes}/>
+      {/* <HomeScreen authLevel={2} />
+      <NotificationCont/>  */}
 
       </div>
     );

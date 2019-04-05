@@ -1,7 +1,10 @@
 import React from 'react';
 
 const CreateRota = (props) => {
-    return (  );
+    return ( 
+        <div>
+        </div>
+     );
 }
  
 export default CreateRota;
