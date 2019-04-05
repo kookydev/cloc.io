@@ -13,6 +13,9 @@ import StaffOverview from "./components/manager/StaffOverview/StaffOverview";
 import NotificationCont from "./components/user/Notifications/NotificationCont"
 
 
+import ClockInOutCont from "./components/user/ClockInOut/ClockInOutCont"
+
+
 class App extends Component {
   state = {
     forename: null,
@@ -116,7 +119,6 @@ class App extends Component {
           <Route path="/login" render={loginView} />
         </Router>
 
-        {/* <NotificationCont/>  */}
       </div>
     );
   }
