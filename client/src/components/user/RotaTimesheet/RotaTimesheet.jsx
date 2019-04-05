@@ -1,5 +1,8 @@
 import React from "react";
 import PostData from "../../../data/posts.json";
+import './RotaTimesheet.css';
+import Logo from '../../../logo_text.svg';
+
 
 let dataToTimeString = date => {
   date = new Date(date * 1000);
@@ -63,41 +66,56 @@ let RotaTimesheet = (props) => {
     });
     return (
       <div>
-        <h1>{props.rotaOrTimes === "rota" ? "Rota" : "Times"} for {userData.name}</h1>
-        <table>
+      <div>
+        <img id="logo" src={Logo}/>
+
+      </div>
+
+      <div className= "table">
+      
+        <h1 id="title">{props.rotaOrTimes === "rota" ? "Rota" : "Times"} for {userData.name}</h1>
+        <table responsive>
           <thead>
             <tr>
             <th/>
             <th/>
-            <th>Start</th>
-            <th>Finish</th>
+            <th className="start">Start</th>
+            <th className="start">Finish</th>
             </tr>
           </thead>
-          <tbody>
-          {props.rotaOrTimes === "rota" ? (userData.rota.map((postDetail, index) => {
+          <tbody className="timeSheetText">
+          {props.rotaOrTimes === "rota" ? (userData.rota.map(postDetail => {
               return (
-                <tr key = {index}> 
-                  <td>{dataToDayString(postDetail[0])}</td>
-                  <td>{dataToDayNumber(postDetail[0])}</td>
+                <tr>
+                  <td className="rotaDetails">{dataToDayString(postDetail[0])}</td>
+                  <td className="rotaDetails">{dataToDayNumber(postDetail[0])}</td>
                   <td>{dataToTimeString(postDetail[0])}</td>
                   <td>{dataToTimeString(postDetail[1])}</td>
                 </tr>
               );
-            })) : (userData.times.map((postDetail, index) => {
+            })) : (userData.times.map(postDetail => {
               return (
-                <tr key = {index}>
-                  <td>{dataToDayString(postDetail[0])}</td>
-                  <td>{dataToDayNumber(postDetail[0])}</td>
+                <tr>
+                  <td className="rotaDetails">{dataToDayString(postDetail[0])}</td>
+                  <td className="rotaDetails">{dataToDayNumber(postDetail[0])}</td>
                   <td>{dataToTimeString(postDetail[0])}</td>
                   <td>{dataToTimeString(postDetail[1])}</td>
                 </tr>
               );
             }))}
+
+            
             
           </tbody>
         </table>
       </div>
+      </div>
+
     );
-}
+          }
+
+
 
 export default RotaTimesheet;
+
+

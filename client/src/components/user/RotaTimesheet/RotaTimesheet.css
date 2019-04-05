@@ -1,0 +1,52 @@
+body {
+    background-image: var(--main-color);
+    height: 100vh;
+    width: 100vw;
+}
+
+.table {
+    background-color: var(--table-color);
+    width: 95%;
+    height: 73vh;
+    padding-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    line-height: 40px;
+    position: relative;
+    
+  }
+
+.start {
+    font-family: var(--heading-text);
+    font-weight: 700;
+    text-align: center;
+    
+}
+
+#title {
+    font-family: var(--heading-text);
+    font-weight: 700;
+    text-decoration: underline;
+    
+}
+
+.timeSheetText {
+    font-family: var(--heading-text);
+    flex-direction: left;
+    margin-left: 100px;
+
+
+}
+
+#logo {
+    height: 140px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.rotaDetails {
+text-align: left;
+}
