@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 const Login = props => {
   function handleClick(e) {
@@ -10,19 +11,32 @@ const Login = props => {
     <div>
       <div>
         <div>
-          <h2>Employee ID:</h2>
-          <input type="text" placeholder="Enter Username" required />
+          <h2>Login</h2>
+          <input
+            id="username"
+            type="text"
+            placeholder="Enter Username"
+            value={props.value}
+            onChange={props.handleChange}
+          />
 
-          <h2>Password:</h2>
-          <input type="password" placeholder="Enter Password" required />
+          <h2>Password</h2>
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter Password"
+            value={props.value}
+            onChange={props.handleChange}
+          />
           <br />
-          <button type="submit" onClick={handleClick} href=" ">
+          <button type="submit" onClick={props.compareDB}>
             Login
           </button>
-          <label>
+          <Link to='/home'>Home</Link>
+          {/* <label>
             <input type="checkbox" checked="checked" name="remember" />
             Remember Me
-          </label>
+          </label> */}
         </div>
       </div>
 

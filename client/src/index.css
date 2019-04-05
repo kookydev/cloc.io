@@ -1,9 +1,25 @@
+:root {
+  --main-color: linear-gradient(#00B0BB, #6AD9C4);
+  --secondary-color: linear-gradient(to top,#CB2D3E, #EF473A);
+  --main-text-color:#000;
+  --secondary-text-color:#EBEBEB;
+  --tertiary-text-color: #FF0000;
+  --dismiss-color: #FFC700;
+  --green-color1: #00BB13;
+  --green-color2: #8CE495;
+  --table-color: #D7FDFF;
+  --heading-text: "Lato";
+
+  --body-text: "Raleway";
+}
+
+/* Use "background-image:" property to use gradients */
+
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,3 +28,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+

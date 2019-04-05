@@ -5,28 +5,36 @@ class NotificationCont extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            notification: "Notification Text Here"
+            notification: "Welcome to clock.io",
+            snooze: false,
+            pings: 0,
          }
     }
 
-    notificationDisplay() {
-        let timer = 10000
-        setTimeout(() => {
-            
-        
-        })
-    };
+    
+    notificationLoop() {
+        //3600000 1hr
+        //900000 15min
+        //
+        let timer = 3600000;
+        let breakActive = false;
 
-    pauseNotification() {
-        clearTimeout()
+        setTimeout(() => {
+            if(breakActive === false) {
+                this.setState({ notification: "Its time to take a break!"})
+                breakActive = true;
+                timer = 900000;
+            } else if(breakActive === true) {
+                this.setState({ notification: "Break over! Back to work."})
+                breakActive = false;
+                timer = 3600000
+            }
+        }, timer);
     }
 
     render() { 
         return (  
-            <div>
-                <Notification notifyid={ this.state.notification } func={this.notificationDisplay()} />
-                <button onClick={this.pauseNotification}></button>
-            </div>
+            <Notification notifyid={ this.state.notification } runtime={this.notificationLoop()} />
         );
     }
 }
