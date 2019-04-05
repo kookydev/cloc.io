@@ -1,4 +1,11 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
+
+import RequestLeave from "../RequestLeave/RequestLeave";
+import RotaTimesheet from "../RotaTimesheet/RotaTimesheet";
+import ClockInOut from "../ClockInOut/ClockInOut"
+import StaffOverview from "../../manager/StaffOverview/StaffOverview";
+import ViewEditUsers from "../../admin/ViewEditUsers/ViewEditUsers"
 
 // let userData = {
 //   userName: "Jacob",
@@ -8,15 +15,18 @@ import React from "react";
 // };
 
 const HomeScreen = props => {
-  if (props.userid === 1) {
+  // If the authLevel passed in is 1
+  if (props.authLevel === 1) {
     return (
-      <div>
-        <div>{props.holidayRequest} Holiday Request</div>
-        <div>{props.timeSheet} Timesheet</div>
-        <div>{props.ClockIn} Clock In</div>
-      </div>
+        <div>
+          <div>{props.holidayRequest} <Link to="/holidayreq">Holiday Request</Link></div>
+          <div>{props.timeSheet} <Link to="/timesheet">Timesheet</Link></div>
+          <div>{props.ClockIn} Clock In</div>
+        </div>
     );
-  } else if (props.userid === 2) {
+  } 
+  // If the authLevel passed in is 2
+  else if (props.authLevel === 2) {
     return (
       <div>
          <div>{props.holidayRequest} Holiday Request</div>
@@ -25,7 +35,9 @@ const HomeScreen = props => {
         <div>{props.staff} Staff</div>
       </div>
     );
-  } else if (props.userid === 3) {
+  } 
+  // If the authLevel passed in is 3
+  else if (props.authLevel === 3) {
     return (
       <div>
        <div>{props.holidayRequest} Holiday Request</div>
@@ -35,7 +47,9 @@ const HomeScreen = props => {
         <div>{props.admin} Create/edit Users</div>
       </div>
     );
-  } else {
+  } 
+  // If the authLevel is neither 1 nor 2 nor 3
+  else {
     return (
       <div>
         <div>Something Went Wrong</div>
