@@ -6,6 +6,7 @@ import HomeScreen from "./components/user/HomeScreen/HomeScreen";
 import StaffDetails from "./components/manager/StaffDetails/StaffDetails";
 import UserData from "./data/posts.json";
 import StaffOverview from "./components/manager/StaffOverview/StaffOverview";
+import NotificationCont from "./components/user/Notifications/NotificationCont"
 
 class App extends Component {
   state = {
@@ -18,7 +19,7 @@ class App extends Component {
       <div className="App">
 
       <HomeScreen authLevel={2} />
-      <NotificationCont/> 
+      <NotificationCont /> 
 
 
       </div>

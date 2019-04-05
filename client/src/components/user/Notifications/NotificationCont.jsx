@@ -8,9 +8,25 @@ class NotificationCont extends Component {
             notification: "Notification Text Here"
          }
     }
+
+    notificationDisplay() {
+        let timer = 10000
+        setTimeout(() => {
+            
+        
+        })
+    };
+
+    pauseNotification() {
+        clearTimeout()
+    }
+
     render() { 
         return (  
-            <Notification notifyid={ this.state.notification } />
+            <div>
+                <Notification notifyid={ this.state.notification } func={this.notificationDisplay()} />
+                <button onClick={this.pauseNotification}></button>
+            </div>
         );
     }
 }

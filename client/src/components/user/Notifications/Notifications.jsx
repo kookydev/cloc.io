@@ -28,4 +28,4 @@ const Notifications  = (props) => {
       );
 }
  
-export default Notifications ;
+export default Notifications;
