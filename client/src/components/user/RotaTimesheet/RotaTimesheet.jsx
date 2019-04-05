@@ -2,6 +2,7 @@ import React from "react";
 import PostData from "../../../data/posts.json";
 import './RotaTimesheet.css';
 import Logo from '../../../logo_text.svg';
+import Back from '../../../back_icon.svg'
 
 
 let dataToTimeString = date => {
@@ -67,10 +68,9 @@ let RotaTimesheet = (props) => {
     return (
       <div>
       <div>
-      <button className="button">Button</button>
-        <img id="logo" src={Logo}/>
 
-        
+        <img className="backButton" src={Back}/>
+        <img id="logo" src={Logo}/>
 
       </div>
 
