@@ -1,7 +1,9 @@
 import React from 'react';
 
 const StaffDetails = (props) => {
-    return (  );
+    return (  
+        
+    );
 }
  
 export default StaffDetails;
