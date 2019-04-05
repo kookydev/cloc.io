@@ -31,17 +31,16 @@ class App extends Component {
     ]
   }
 
-  userSelect = (e) => {
-    // allows user to be selected
-    this.setState({data: this.state.data.concat([e.target.value])})
-  }
+
 
   HandleDelete = (e) => {
     this.setState({data: this.state.data.filter(function(data) { 
-      return data !== e.target.value 
-      console.log(data !== e.target.value )
+      console.log(data.id !== e.target.id )
+
+      return data.id !== e.target.id
   })});
 }
+
     
 
 render() {
@@ -57,7 +56,7 @@ render() {
         {request.userName}
         {request.startDate}
         {request.endDate}
-    -    <button id={request.id} onClick={this.HandleDelete}>Approve</button>
+        <button id={request.id} onClick={this.HandleDelete}>Approve</button>
         <button id={request.id} onClick={this.HandleDelete}>Decline</button>
       </div>
     )
