@@ -48,3 +48,8 @@ input[type="button"],
 input[type="submit"] {
   border: 0;
 }
+
+label,
+span {
+  font-family: var(--body-text);
+}
