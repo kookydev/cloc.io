@@ -1,0 +1,12 @@
+.table {
+    background-color: var(--table-color);
+    width: 95%;
+    height: 73vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    line-height: 40px;
+    position: relative;
+}

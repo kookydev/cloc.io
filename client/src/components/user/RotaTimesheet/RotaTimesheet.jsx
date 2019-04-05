@@ -67,7 +67,10 @@ let RotaTimesheet = (props) => {
     return (
       <div>
       <div>
+      <button className="button">Button</button>
         <img id="logo" src={Logo}/>
+
+        
 
       </div>
 
@@ -117,5 +120,5 @@ let RotaTimesheet = (props) => {
 
 
 export default RotaTimesheet;
-
+export {dataToTimeString, dataToDayString, dataToDayNumber};
 
