@@ -30,7 +30,7 @@ class App extends Component {
 
   createUser = (event) => {
     event.preventDefault();
-    return fetch(`http://localhost:5000/createuser`, {
+    return fetch(`http://localhost:5000/home/createuser`, {
       method: "post",
       headers: {
         "Content-type": "application/json"
@@ -53,7 +53,7 @@ class App extends Component {
     let id = this.state.username;
     let password = this.state.password;
 
-    return fetch(`http://localhost:5000/createuser/${id}&${password}`)
+    return fetch(`http://localhost:5000/login/${id}&${password}`)
       .then(response => {
         // console.log(response)
         return response.json();

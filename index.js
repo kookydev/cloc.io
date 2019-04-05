@@ -25,11 +25,11 @@ app.get("/express_backend", (req, res) => {
   res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT :)" });
 });
 
-app.post("/createuser", (req, res) => {
+app.post("/home/createuser", (req, res) => {
   taskController.createNewUser(req, res);
 });
 
-app.get("/createuser/:userName&:password", (req, res) => {
+app.get("/login/:userName&:password", (req, res) => {
   taskController.readUser(req, res);
 });
 

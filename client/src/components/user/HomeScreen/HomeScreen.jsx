@@ -61,13 +61,13 @@ const HomeScreen = props => {
           <br />
           <Link to="/home/staff">Staff</Link>
           <br />
-          <Link to="/createuser">Create User</Link>
+          <Link to="/home/createuser">Create User</Link>
 
           <Route path="/home/holiday" component={RequestLeave} />
           <Route path="/home/timesheet" component={RotaTimesheet} />
           <Route path="/home/clockinout" component={ClockInOut} />
           <Route path="/home/staff" component={ClockInOut} />
-          <Route path="/createuser/" component={AddUser} />
+          <Route path="/home/createuser" component={AddUser} />
         </div>
       </Router>
     );
