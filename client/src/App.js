@@ -1,24 +1,33 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 import './App.css';
-
+import CreateRota from './components/admin/CreateRota/CreateRota'
 import HomeScreen from './components/user/HomeScreen/HomeScreen'
 import NotificationCont from './components/user/Notifications/NotificationCont'
 
 class App extends Component {
-  state={
+  state = {
     currentUser: 3,
     rotaOrTimes: "rota",
   }
-  
-  
+
+
   render() {
-    return (
-      <div className="App">
+    return ( <
+      div className = "App" >
 
-      <HomeScreen authLevel={2} />
-      <NotificationCont/> 
+      <
+      HomeScreen authLevel = {
+        2
+      }
+      /> <
+      NotificationCont / >
+      <
+      CreateRota / >
 
-      </div>
+      <
+      /div>
     );
   }
 }
