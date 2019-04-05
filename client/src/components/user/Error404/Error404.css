@@ -2,5 +2,12 @@ body {
   background-image: var(--main-color);
   color: var(--main-text-color);
   height: 736px;
+}
+
+h3 {
   font-family: var(--heading-text);
+}
+
+p {
+  font-family: var(--body-text);
 }
