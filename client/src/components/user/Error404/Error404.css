@@ -1,0 +1,6 @@
+body {
+  background-image: var(--main-color);
+  color: var(--main-text-color);
+  height: 736px;
+  font-family: var(--heading-text);
+}

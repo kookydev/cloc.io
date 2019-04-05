@@ -20,6 +20,7 @@ body {
   border-radius: 5px;
   height: 25px;
   width: 180px;
+  font-family: var(--body-text);
 }
 
 input:focus {
