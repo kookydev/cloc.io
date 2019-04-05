@@ -24,7 +24,7 @@ body {
 
 input:focus {
   outline: none;
-  border-color: var(--tertiary-text-color: #ff0000;);
+  border-color: var(--tertiary-text-color);
   box-shadow: 0 0 10px #719ece;
 }
 
