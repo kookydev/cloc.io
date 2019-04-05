@@ -1,6 +1,9 @@
 body {
   background-image: var(--main-color);
+  color: var(--main-text-color);
   height: 736px;
+  --heading-text: "Lato";
+  --body-text: "Raleway";
 }
 
 .employeeText {
@@ -19,11 +22,11 @@ body {
 }
 
 .passwordText {
-  font-family: "Lato";
 }
 
 .loginBtn {
-  background-image: linear-gradient(#ef473a, #cb2d3e);
+  background-image: var(--secondary-color);
+  color: var(--secondary-text-color);
   border-radius: 5px;
   height: 42px;
   width: 150px;

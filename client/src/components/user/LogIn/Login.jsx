@@ -1,5 +1,6 @@
 import React from "react";
-import "./Login.css";
+import "../../Forms.css";
+import logos from "../../../logos/logo_text.svg";
 
 const Login = props => {
   function handleClick(e) {
@@ -9,6 +10,7 @@ const Login = props => {
 
   return (
     <div className="Login">
+      <img id="logo" src={logos} />
       <div>
         <div>
           <h2 className="employeeText">Employee ID:</h2>
@@ -43,7 +45,6 @@ const Login = props => {
           </label>
         </div>
       </div>
-
       <div>
         <span>
           Forgot <a href=" ">password?</a>

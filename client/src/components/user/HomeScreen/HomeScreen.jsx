@@ -11,7 +11,8 @@ import RequestLeave from "../RequestLeave/RequestLeave";
 import RotaTimesheet from "../RotaTimesheet/RotaTimesheet";
 import ClockInOut from "../ClockInOut/ClockInOut";
 import StaffOverview from "../../manager/StaffOverview/StaffOverview";
-import ViewEditUsers from "../../admin/ViewEditUsers/ViewEditUsers";
+import ViewEditUsers from "../../admin/ViewEditUsers/ViewEditUsers"
+import StaffTimesheet from "../../manager/StaffTimesheet/StaffTimesheet";
 
 // let userData = {
 //   userName: "Jacob",
@@ -29,10 +30,12 @@ const HomeScreen = props => {
           {props.holidayRequest} <Link to="/holidayreq">Holiday Request</Link>
         </div>
         <div>
-          {props.timeSheet} <Link to="/timesheet">Timesheet</Link>
+          <div>{props.holidayRequest} <Link to="/holidayreq">Holiday Request</Link></div>
+          <div>{props.timeSheet} <Link to="/timesheet">Timesheet</Link></div>
+          <StaffTimesheet rotaOrTimes = {props.rotaOrTimes}/>
+          <div>{props.ClockIn} Clock In</div>
         </div>
-        <div>{props.ClockIn} Clock In</div>
-      </div>
+      </div> 
     );
   } 
   // If the authLevel passed in is 2
@@ -41,6 +44,7 @@ const HomeScreen = props => {
       <div>
         <div>{props.holidayRequest} Holiday Request</div>
         <div>{props.timeSheet} Timesheet</div>
+          <StaffTimesheet rotaOrTimes = {props.rotaOrTimes}/> 
         <div>{props.ClockIn} Clock In</div>
         <div>{props.staff} Staff</div>
       </div>
