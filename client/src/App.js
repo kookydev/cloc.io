@@ -15,9 +15,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <RotaTimesheet userid={this.state.currentUser} rotaOrTimes={this.state.rotaOrTimes}/>
-      {/* <HomeScreen authLevel={2} />
-      <NotificationCont/>  */}
+      {/* <RotaTimesheet userid={this.state.currentUser} rotaOrTimes={this.state.rotaOrTimes}/> */}
+      <HomeScreen authLevel={2} />
+      {/* <NotificationCont/>  */}
 
       </div>
     );

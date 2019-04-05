@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Raleway:700');
+
 :root {
   --main-color: linear-gradient(#00B0BB, #6AD9C4);
   --secondary-color: linear-gradient(to top,#CB2D3E, #EF473A);
@@ -9,7 +11,6 @@
   --green-color2: #8CE495;
   --table-color: #D7FDFF;
   --heading-text: "Lato";
-
   --body-text: "Raleway";
 }
 
