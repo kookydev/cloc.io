@@ -5,6 +5,7 @@ import HomeScreen from "./components/user/HomeScreen/HomeScreen";
 import StaffDetails from "./components/manager/StaffDetails/StaffDetails";
 import UserData from "./data/posts.json";
 import StaffOverview from "./components/manager/StaffOverview/StaffOverview";
+import NotificationCont from "./components/user/Notifications/NotificationCont"; 
 
 class App extends Component {
   state = {
