@@ -1,0 +1,33 @@
+body {
+  background-image: url(../../../../logos/logo.svg);
+  background-image: linear-gradient(#00b0bb, #32c3bf, #6ad9c4);
+  height: 736px;
+}
+
+.employeeText {
+}
+
+.employeeInput {
+  border-radius: 5px;
+  height: 25px;
+  width: 180px;
+}
+
+.passwordInput {
+  border-radius: 5px;
+  height: 25px;
+  width: 180px;
+}
+
+.passwordText {
+  font-family: "Lato";
+}
+
+.loginBtn {
+  background-image: linear-gradient(#ef473a, #cb2d3e);
+  border-radius: 5px;
+  height: 42px;
+  width: 150px;
+  color: white;
+  font-size: 32px;
+}

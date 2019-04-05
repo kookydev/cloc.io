@@ -1,4 +1,5 @@
 import React from "react";
+import "./Login.css";
 
 const Login = props => {
   function handleClick(e) {
@@ -7,18 +8,35 @@ const Login = props => {
   }
 
   return (
-    <div>
+    <div className="Login">
       <div>
         <div>
-          <h2>Employee ID:</h2>
-          <input type="text" placeholder="Enter Username" required />
+          <h2 className="employeeText">Employee ID:</h2>
+          <input
+            type="text"
+            className="employeeInput"
+            placeholder="Enter Username"
+            required
+          />
 
-          <h2>Password:</h2>
-          <input type="password" placeholder="Enter Password" required />
+          <h2 className="passwordText">Password:</h2>
+          <input
+            type="password"
+            className="passwordInput"
+            placeholder="Enter Password"
+            required
+          />
           <br />
-          <button type="submit" onClick={handleClick} href=" ">
+          <br />
+          <button
+            type="submit"
+            className="loginBtn"
+            onClick={handleClick}
+            href=" "
+          >
             Login
           </button>
+          <br />
           <label>
             <input type="checkbox" checked="checked" name="remember" />
             Remember Me
