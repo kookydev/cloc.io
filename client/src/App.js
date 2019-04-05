@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import RotaTimesheet from "./components/user/RotaTimesheet/RotaTimesheet";
 import "./App.css";
@@ -19,7 +18,6 @@ class App extends Component {
       <RotaTimesheet userid={this.state.currentUser} rotaOrTimes={this.state.rotaOrTimes}/>
       {/* <HomeScreen authLevel={2} />
       <NotificationCont/>  */}
-
 
       </div>
     );
