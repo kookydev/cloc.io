@@ -30,7 +30,7 @@ class App extends Component {
 
   createUser = (event) => {
     event.preventDefault();
-    return fetch(`http://localhost:5000/home/createuser`, {
+    return fetch(`http://localhost:5000/createuser`, {
       method: "post",
       headers: {
         "Content-type": "application/json"
