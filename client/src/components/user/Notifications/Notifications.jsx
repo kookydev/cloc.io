@@ -1,38 +1,38 @@
-import React from 'react'
+import React from "react";
 
-const Notifications  = (props) => {
- let theBody = "Hello"
- let dissmis = true
- let icon1 = 'https://www.freeiconspng.com/img/2743.png'
+const Notifications = props => {
+  //add description
+  let description = "Put some more info here";
+  //chnage to false if you want notification to dissapear after a while
+  let dissmis = true;
   let options = {
     requireInteraction: dissmis,
-    body: theBody,
-    icon: icon1
-}
-        if (!("Notification" in window)) {
-          alert("This browser does not support desktop notification");
-        }
-        // this should push your new notifications
-        else if (Notification.permission === "granted") {
-         new Notification(props.notifyid, options)
-          Notification.onclose = function() {
-          };
-        }
-        else if (Notification.permission !== "denied") {
-          Notification.requestPermission().then(function (permission) {
-            if (permission === "granted") {
-              new Notification("You will be notified when something comes up!");
-            }
-          });
-        }
-     
-    
-    
-    return (
-        <div>
-         
-        </div>
-      );
-}
- 
-export default Notifications ;
+    body: description
+  };
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  }
+  // this should push your new notifications
+  else if (Notification.permission === "granted") {
+    new Notification(props.notifyid, options);
+    Notification.onclick = function() {
+      window.open("http://www.mozilla.org");
+    };
+  } else if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(function(permission) {
+      if (permission === "granted") {
+        //first notifiaction after you accept notifications
+        new Notification("You will be notified when something comes up!");
+      }
+    });
+  }
+
+  return (
+    <div>
+      {/* if you want to print notificantion on tthe page */}
+      {/* <p>{props.notifyid}</p> */}
+    </div>
+  );
+};
+
+export default Notifications;
