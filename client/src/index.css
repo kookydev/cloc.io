@@ -11,7 +11,7 @@
   --heading-text: "Lato";
   --body-text: "Raleway";
 }
-
+/* var(--main-color); */
 /* Use "background-image:" property to use gradients */
 
 body {

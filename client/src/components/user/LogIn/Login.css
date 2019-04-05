@@ -1,4 +1,4 @@
-body {
+/* body {
   background-image: var(--main-color);
   height: 736px;
 }
@@ -23,10 +23,10 @@ body {
 }
 
 .loginBtn {
-  background-image: linear-gradient(#ef473a, #cb2d3e);
+  background-image: var(--secondary-color)linear-gradient(#ef473a, #cb2d3e);
   border-radius: 5px;
   height: 42px;
   width: 150px;
   color: white;
   font-size: 32px;
-}
+} */
