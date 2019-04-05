@@ -6,8 +6,6 @@ class NotificationCont extends Component {
         super(props);
         this.state = { 
             notification: "Welcome to clock.io",
-            snooze: false,
-            pings: 0,
          }
     }
 
