@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from 'react-router-dom'
 
 const Login = props => {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log("Login was clicked");
+  }
+
   return (
     <div>
       <div>

@@ -8,8 +8,15 @@ import AddUserView from "./views/user/AddUserView";
 // import ClockInOutView from "./views/user/ClockInOutView";
 import "./App.css";
 // import ClockInOutView from "./views/user/ClockInOutView";
+// import HomeScreen from "./components/user/HomeScreen/HomeScreen";
+// import StaffDetails from "./components/manager/StaffDetails/StaffDetails";
+// import UserData from "./data/posts.json";
+// import StaffOverview from "./components/manager/StaffOverview/StaffOverview";
+// import NotificationCont from "./components/user/Notifications/NotificationCont"
 
-// import NotificationCont from './components/user/Notifications/NotificationCont'
+
+// import ClockInOutCont from "./components/user/ClockInOut/ClockInOutCont"
+
 
 class App extends Component {
   state = {
@@ -187,8 +194,6 @@ class App extends Component {
           <Route path="/login" render={loginView} />
           <Route path="/rota" render={clockInView} />
         </Router>
-
-        {/* <NotificationCont/>  */}
       </div>
     );
   }
