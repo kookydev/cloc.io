@@ -12,7 +12,7 @@ class StaffTimesheet extends Component {
             data: [{
                 day: "Monday",
                 date: "1st April",
-                name: "Jack",
+                forename: "Jack",
                 surname: "Smith",
                 id: 1,
                 rota: [900, 1700],
@@ -37,7 +37,7 @@ class StaffTimesheet extends Component {
                     day: dataToDayString(pairOfTimes[0]),
                     date: dataToDayNumber(pairOfTimes[0]),
                     id: employee.id,
-                    name: employee.name,
+                    forename: employee.forename,
                     surname: employee.surname,
                     rota: pairOfTimes
                 }
@@ -48,7 +48,7 @@ class StaffTimesheet extends Component {
                     day: dataToDayString(pairOfTimes[0]),
                     date: dataToDayNumber(pairOfTimes[0]),
                     id: employee.id,
-                    name: employee.name,
+                    forename: employee.forename,
                     surname: employee.surname,
                     times: pairOfTimes
                 }
@@ -92,7 +92,7 @@ render() {
                         return (
                             
                             <tr key = {index}> 
-                                <td>{dataObject.name}</td> 
+                                <td>{dataObject.forename}</td> 
                                 <td>{dataToTimeString(dataObject.rota[0])}</td>
                                 <td>{dataToTimeString(dataObject.rota[1])}</td>
                                 <td>No</td> 
@@ -108,7 +108,7 @@ render() {
                         return (
                             
                             <tr key = {index}> 
-                                <td>{dataObject.name}</td> 
+                                <td>{dataObject.forename}</td> 
                                 <td>{dataToTimeString(dataObject.times[0])}</td>
                                 <td>{dataToTimeString(dataObject.times[1])}</td>
                                 <td>No</td> 
