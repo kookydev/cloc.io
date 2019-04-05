@@ -10,7 +10,7 @@ const Login = props => {
   }
 
   return (
-    <div className="login">
+    <div className="login">`
       <img id="logo" src={logos} />
 
           <h2 className="employeeText">Login</h2>
