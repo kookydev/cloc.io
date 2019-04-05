@@ -1,4 +1,7 @@
 import React from "react";
+import "../../Forms.css";
+import logos from "../../../logos/logo_text.svg";
+import { Link } from 'react-router-dom'
 
 const Login = props => {
   function handleClick(e) {
@@ -7,30 +10,45 @@ const Login = props => {
   }
 
   return (
-    <div>
-      <div>
-        <div>
-          <h2>Employee ID:</h2>
-          <input type="text" placeholder="Enter Username" required />
+    <div className="login">`
+      <img id="logo" src={logos} />
 
-          <h2>Password:</h2>
-          <input type="password" placeholder="Enter Password" required />
+          <h2 className="employeeText">Login</h2>
+          <input
+            className="employeeInput fieldInput"
+            id="username"
+            type="text"
+            placeholder="Enter Username"
+            value={props.value}
+            onChange={props.handleChange}
+          />
+
+          <h2 className="passwordText">Password</h2>
+          <input
+            className="passwordInput fieldInput"
+            id="password"
+            type="password"
+            placeholder="Enter Password"
+            value={props.value}
+            onChange={props.handleChange}
+          />
           <br />
-          <button type="submit" onClick={handleClick} href=" ">
+          <br />
+          <button type="submit" onClick={props.compareDB} className="loginBtn">
             Login
           </button>
-          <label>
+          <br />
+          <Link to='/home'>Home</Link>
+          {/* <label>
             <input type="checkbox" checked="checked" name="remember" />
             Remember Me
-          </label>
-        </div>
-      </div>
+          </label> */}
 
-      <div>
+
         <span>
           Forgot <a href=" ">password?</a>
         </span>
-      </div>
+
     </div>
   );
 };

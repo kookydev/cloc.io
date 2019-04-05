@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Raleway:700');
+
+
 :root {
+<<<<<<< HEAD
   --main-color: linear-gradient(#00B0BB, #6AD9C4);
   --secondary-color: linear-gradient(to top,#CB2D3E, #EF473A);
   --main-text-color:#000;
@@ -8,12 +12,22 @@
   --green-color1: #00BB13;
   --green-color2: #8CE495;
   --table-color: #D7FDFF;
+=======
+  --main-color: linear-gradient(#00b0bb, #6ad9c4);
+  --secondary-color: linear-gradient(to top, #cb2d3e, #ef473a);
+  --main-text-color: #000;
+  --secondary-text-color: #ebebeb;
+  --tertiary-text-color: #ff0000;
+  --dismiss-color: #ffc700;
+  --green-color1: #00bb13;
+  --green-color2: #8ce495;
+  --table-color: #d7fdff;
+>>>>>>> master
   --heading-text: "Lato";
   --body-text: "Raleway";
 }
-
+/* var(--main-color); */
 /* Use "background-image:" property to use gradients */
-
 
 body {
   margin: 0;
@@ -22,10 +36,3 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-
