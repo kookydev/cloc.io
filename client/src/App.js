@@ -18,7 +18,7 @@ class App extends Component {
       <HomeScreen authLevel={2} />
       <NotificationCont/> 
 
-      </div>
+       </div>
     );
   }
 }
