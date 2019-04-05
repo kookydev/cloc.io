@@ -5,6 +5,13 @@ body {
   font-family: var(--heading-text);
 }
 
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .employeeText {
   font-family: var(--heading-text);
   margin-bottom: 0.1em;

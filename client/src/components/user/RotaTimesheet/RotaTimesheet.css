@@ -47,7 +47,7 @@ body {
 #logo {
     height: 140px;
     margin-top: 40px;
-    position: absolute;
+    /* position: absolute; */
 }
 
 .rotaDetails {
