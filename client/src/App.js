@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import LoginView from "./views/user/LoginView";
 import HomeScreenView from "./views/user/HomeScreenView";
 import AddUserView from "./views/user/AddUserView";
+// import ClockInOutView from "./views/user/ClockInOutView";
 import "./App.css";
+// import ClockInOutView from "./views/user/ClockInOutView";
 
 // import NotificationCont from './components/user/Notifications/NotificationCont'
 
@@ -44,6 +46,64 @@ class App extends Component {
         job_role: this.state.job_role_new,
         manager: this.state.manager_new
       })
+    });
+  };
+
+  clockIn = (event) => {
+    event.preventDefault();
+
+    console.log('clockin')
+
+    let currentTime = new Date();
+    let id = this.state.username;
+    return fetch(`http://localhost:5000/rota/${id}`)
+    .then(response => {
+      // console.log(response)
+      return response.json();
+    })
+    .then(myJson => {
+      return JSON.stringify(myJson);
+    })
+    .then(data => {
+      let returnData = JSON.parse(data);
+      this.setState({ in_time: returnData[0].in_time });
+      return fetch(`http://localhost:5000/rota`, {
+      method: "put",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify({
+        in_time: currentTime,
+      })
+    });
+    });
+  };
+
+  clockOut = (event) => {
+    event.preventDefault();
+
+    let currentTime = new Date();
+    let id = this.state.username;
+    return fetch(`http://localhost:5000/rota/${id}`)
+    .then(response => {
+      // console.log(response)
+      return response.json();
+    })
+    .then(myJson => {
+      return JSON.stringify(myJson);
+    })
+    .then(data => {
+      let returnData = JSON.parse(data);
+      this.setState({ out_time: returnData[0].out_time });
+      return fetch(`http://localhost:5000/rota`, {
+      method: "put",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify({
+        out_time: currentTime,
+      })
+    });
     });
   };
 
@@ -101,7 +161,22 @@ class App extends Component {
     };
 
     const homeScreenView = props => {
-      return <HomeScreenView auth_lvl={this.state.auth_lvl} />;
+      return( 
+        <HomeScreenView auth_lvl={this.state.auth_lvl}
+        clockIn={this.clockIn}
+        clockOut={this.clockOut}
+      />
+      );
+    };
+
+    const clockInView = props => {
+      return( 
+        <HomeScreenView
+        auth_lvl={this.state.auth_lvl}
+        clockIn={this.clockIn}
+        clockOut={this.clockOut}
+      />
+      );
     };
 
     return (
@@ -110,6 +185,7 @@ class App extends Component {
           <Route path="/home" render={homeScreenView} />
           <Route path="/createuser" render={addUserView} />
           <Route path="/login" render={loginView} />
+          <Route path="/rota" render={clockInView} />
         </Router>
 
         {/* <NotificationCont/>  */}

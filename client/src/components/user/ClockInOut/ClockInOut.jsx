@@ -1,9 +1,15 @@
 import React from 'react';
 
+const test = (props) => {
+  console.log('fucked it');
+  // console.log(props.clockIn())
+}
+
 const ClockInOut = (props) => {
     return (  
         <div>
-            <h1>Clock me in</h1>
+            <button type="submit" onClick={props.clockIn}>CLOCK IN</button>
+            <button type="submit" onClick={test}>CLOCK OUT</button>
         </div>
     );
 }

@@ -33,10 +33,16 @@ app.get("/login/:userName&:password", (req, res) => {
   taskController.readUser(req, res);
 });
 
-app.post("/home/rota", (req, res) => {
+app.post("/rota", (req, res) => {
   console.log('before')
   taskController.createNewRota(req, res);
   console.log('after')
+})
+
+app.put("/rota/:username&:in_time", (req, res) => {
+  console.log('before')
+  taskController.clockIn(req, res);
+  console.log('after') 
 })
 
 app.get('*', (req, res, next) => {

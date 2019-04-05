@@ -8,6 +8,15 @@ import ClockInOut from "../ClockInOut/ClockInOut"
 // import ViewEditUsers from "../../admin/ViewEditUsers/ViewEditUsers"
 import AddUser from '../../admin/AddUser/AddUser';
 
+const clockInTest= props => {
+  return( 
+    <ClockInOut
+    clockIn={props.clockIn}
+    clockOut={props.clockOut}
+  />
+  );
+};
+
 const HomeScreen = props => {
   // If the authLevel passed in is 1
   if (props.auth_lvl === 1) {
@@ -18,11 +27,11 @@ const HomeScreen = props => {
           <br />
           <Link to="/timesheet">Timesheet</Link>
           <br />
-          <Link to="/clockinout">ClockIn</Link>
+          <Link to="/rota">ClockIn</Link>
 
           <Route path="/holiday" component={RequestLeave} />
           <Route path="/timesheet" component={RotaTimesheet} />
-          <Route path="/clockinout" component={ClockInOut} />
+          <Route path="/rota" component={ClockInOut} />
         </div>
       </Router>
     );
@@ -36,13 +45,13 @@ const HomeScreen = props => {
           <br />
           <Link to="/home/timesheet">Timesheet</Link>
           <br />
-          <Link to="/home/clockinout">ClockIn</Link>
+          <Link to="/home/rota">ClockIn</Link>
           <br />
           <Link to="/home/staff">Staff</Link>
 
           <Route path="/home/holiday" component={RequestLeave} />
           <Route path="/home/timesheet" component={RotaTimesheet} />
-          <Route path="/home/clockinout" component={ClockInOut} />
+          <Route path="/rota" component={clockInTest} />
           <Route path="/home/staff" component={ClockInOut} />
         </div>
       </Router>
@@ -57,7 +66,7 @@ const HomeScreen = props => {
           <br />
           <Link to="/home/timesheet">Timesheet</Link>
           <br />
-          <Link to="/home/clockinout">ClockIn</Link>
+          <Link to="/rota">ClockIn</Link>
           <br />
           <Link to="/home/staff">Staff</Link>
           <br />
@@ -65,7 +74,7 @@ const HomeScreen = props => {
 
           <Route path="/home/holiday" component={RequestLeave} />
           <Route path="/home/timesheet" component={RotaTimesheet} />
-          <Route path="/home/clockinout" component={ClockInOut} />
+          <Route path="/rota" component={clockInTest} />
           <Route path="/home/staff" component={ClockInOut} />
           <Route path="/home/createuser" component={AddUser} />
         </div>

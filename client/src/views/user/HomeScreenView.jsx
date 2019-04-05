@@ -6,6 +6,8 @@ const HomeScreenView = props => {
     <div>
       <HomeScreen
       auth_lvl={props.auth_lvl}
+      clockIn={props.clockIn}
+      clockOut={props.clockOut}
       />
     </div>
   );
