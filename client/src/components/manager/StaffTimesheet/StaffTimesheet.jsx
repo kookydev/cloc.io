@@ -6,7 +6,19 @@ import ViewDataForDate from "./ViewDataForDate";
 class StaffTimesheet extends Component {
     constructor(props){
         super(props) 
-        this.state = {}
+        this.state = {
+            data: [{
+                day: "Monday",
+                date: "1st April",
+                name: "Jack",
+                surname: "Smith",
+                id: 1,
+                rota: [900, 1700],
+                } 
+            ], 
+            dates: ["1st April","2nd April","3rd April","4th April","5th April"] 
+
+        }
     }
 
     componentDidMount() {
@@ -39,33 +51,48 @@ class StaffTimesheet extends Component {
                 data.push(timesObject)
             })
         })
-        this.setState({data: data})
+        let dates = []
+        data.map ((dataObject, index) => {
+            if (!dates.includes(dataObject.date)){
+                dates.push(dataObject.date)
+            }
+        })
+        this.setState({data: data, dates: dates}) 
     }
 
 render() {
-    {this.state ? "" : (
-        let tables = ["1st April","2nd April","3rd April","4th April","5th April"].map((date,index)=>{
+     
+        let tables = this.state.dates.map((date,index)=>{ 
             let checkDate = (dataObject) => {
                 return dataObject.date == date
-            }
-            let rows = this.state.data.filter(checkDate).map((dataObject,index)=>{
-                return (
-                    <tr> 
-                        <td>{dataObject.name}</td>
-                        <td>{dataObject.rota[0]}</td>
-                        <td>{dataObject.rota[1]}</td>
-                        <td>No</td>
-                        <td>No</td>
-                    </tr>
-                )
-            })
+            } 
+            let filteredObjects = this.state.data.filter(checkDate)
+            
+            let rows = filteredObjects.map((dataObject,index)=>{ 
+                console.log (dataObject) 
+                if (dataObject.rota) {
+                    return (
+                        
+                        <tr key = {index}> 
+                            <td>{dataObject.name}</td> 
+                            <td>{dataToTimeString(dataObject.rota[0])}</td>
+                            <td>{dataToTimeString(dataObject.rota[1])}</td>
+                            <td>No</td> 
+                            <td>No</td> 
+                        </tr> 
+                    )
+                }
+                else {
+                    return null
+                }
+            }) 
             return (
                 <div>
                     <table>
                         <thead>
                             <tr>
-                                <th colspan={5}>{date}</th>
-                            </tr>
+                                <th colSpan={5}>{date}</th>
+                            </tr> 
                             <tr> 
                                 <th>Name</th>
                                 <th>Start</th>
@@ -75,41 +102,18 @@ render() {
                             </tr>
                         </thead>
                         <tbody>
-                            {rows}
-                            {/* <tr> 
-                                <td>Elishka</td>
-                                <td>10:30</td>
-                                <td>16:00</td>
-                                <td>No</td>
-                                <td>No</td>
-                            </tr>
-                            <tr>
-                                <td>Will</td>
-                                <td>N/A</td>
-                                <td>N/A</td>
-                                <td>Yes</td>
-                                <td>No</td>
-                            </tr>
-                            <tr>
-                                <td>Jakub</td>
-                                <td>N/A</td>
-                                <td>N/A</td>
-                                <td>Yes</td>
-                                <td>Yes</td> 
-                            </tr> */}
+                            {rows} 
                         </tbody>
                     </table>
                     <br />
                 </div>
-            )})
+            )}) 
         return (
-            <div className = "stafftimesheet">
-                <h1>Staff Timesheet </h1>
+            <div className = "stafftimesheet"> 
+                <h1>Staff Timesheet </h1> 
                 {tables}
             </div>
-        )
-    )
-    } 
+        ) 
     }
 }
 
