@@ -15,8 +15,7 @@ const Notifications = props => {
   // this should push your new notifications
   else if (Notification.permission === "granted") {
     new Notification(props.notifyid, options);
-    Notification.onclick = function() {
-      window.open("http://www.mozilla.org");
+    Notification.onClose = function() {
     };
   } else if (Notification.permission !== "denied") {
     Notification.requestPermission().then(function(permission) {
