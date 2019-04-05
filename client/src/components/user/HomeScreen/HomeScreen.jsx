@@ -1,25 +1,12 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import RequestLeave from "../RequestLeave/RequestLeave";
 import RotaTimesheet from "../RotaTimesheet/RotaTimesheet";
-import ClockInOut from "../ClockInOut/ClockInOut";
-import StaffOverview from "../../manager/StaffOverview/StaffOverview";
-import ViewEditUsers from "../../admin/ViewEditUsers/ViewEditUsers"
-import StaffTimesheet from "../../manager/StaffTimesheet/StaffTimesheet";
-
-// let userData = {
-//   userName: "Jacob",
-//   password: "1234",
-//   authLevel: 1,
-//   name: "Jacob Zielinski"
-// };
+import ClockInOut from "../ClockInOut/ClockInOut"
+// import StaffOverview from "../../manager/StaffOverview/StaffOverview";
+// import ViewEditUsers from "../../admin/ViewEditUsers/ViewEditUsers"
+import AddUser from '../../admin/AddUser/AddUser';
 
 const HomeScreen = props => {
   // If the authLevel passed in is 1

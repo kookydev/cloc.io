@@ -1,9 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
 import { Link } from 'react-router-dom'
-
-const Login = props => {
-=======
 
 const Login = props => {
   function handleClick(e) {
@@ -11,12 +7,10 @@ const Login = props => {
     console.log("Login was clicked");
   }
 
->>>>>>> master
   return (
     <div>
       <div>
         <div>
-<<<<<<< HEAD
           <h2>Login</h2>
           <input
             id="username"
@@ -43,21 +37,6 @@ const Login = props => {
             <input type="checkbox" checked="checked" name="remember" />
             Remember Me
           </label> */}
-=======
-          <h2>Employee ID:</h2>
-          <input type="text" placeholder="Enter Username" required />
-
-          <h2>Password:</h2>
-          <input type="password" placeholder="Enter Password" required />
-          <br />
-          <button type="submit" onClick={handleClick} href=" ">
-            Login
-          </button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember" />
-            Remember Me
-          </label>
->>>>>>> master
         </div>
       </div>
 
