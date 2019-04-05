@@ -35,6 +35,7 @@ const HomeScreen = props => {
           <StaffTimesheet rotaOrTimes = {props.rotaOrTimes}/>
           <div>{props.ClockIn} Clock In</div>
       </div>
+      </div>
     );
   } 
   // If the authLevel passed in is 2
