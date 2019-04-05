@@ -1,11 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect
+} from "react-router-dom";
 
 import RequestLeave from "../RequestLeave/RequestLeave";
 import RotaTimesheet from "../RotaTimesheet/RotaTimesheet";
-import ClockInOut from "../ClockInOut/ClockInOut"
+import ClockInOut from "../ClockInOut/ClockInOut";
 import StaffOverview from "../../manager/StaffOverview/StaffOverview";
 import ViewEditUsers from "../../admin/ViewEditUsers/ViewEditUsers"
+import StaffTimesheet from "../../manager/StaffTimesheet/StaffTimesheet";
 
 // let userData = {
 //   userName: "Jacob",
@@ -18,19 +25,26 @@ const HomeScreen = props => {
   // If the authLevel passed in is 1
   if (props.authLevel === 1) {
     return (
+      <div>
+        <div>
+          {props.holidayRequest} <Link to="/holidayreq">Holiday Request</Link>
+        </div>
         <div>
           <div>{props.holidayRequest} <Link to="/holidayreq">Holiday Request</Link></div>
           <div>{props.timeSheet} <Link to="/timesheet">Timesheet</Link></div>
+          <StaffTimesheet rotaOrTimes = {props.rotaOrTimes}/>
           <div>{props.ClockIn} Clock In</div>
         </div>
+      </div> 
     );
   } 
   // If the authLevel passed in is 2
   else if (props.authLevel === 2) {
     return (
       <div>
-         <div>{props.holidayRequest} Holiday Request</div>
+        <div>{props.holidayRequest} Holiday Request</div>
         <div>{props.timeSheet} Timesheet</div>
+          <StaffTimesheet rotaOrTimes = {props.rotaOrTimes}/> 
         <div>{props.ClockIn} Clock In</div>
         <div>{props.staff} Staff</div>
       </div>
@@ -40,7 +54,7 @@ const HomeScreen = props => {
   else if (props.authLevel === 3) {
     return (
       <div>
-       <div>{props.holidayRequest} Holiday Request</div>
+        <div>{props.holidayRequest} Holiday Request</div>
         <div>{props.timeSheet} Timesheet</div>
         <div>{props.ClockIn} Clock In</div>
         <div>{props.staff} Staff</div>
