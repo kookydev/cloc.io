@@ -14,6 +14,7 @@ class StaffTimesheet extends Component {
                 surname: "Smith",
                 id: 1,
                 rota: [900, 1700],
+                times: [900, 1700]
                 } 
             ], 
             dates: ["1st April","2nd April","3rd April","4th April","5th April"] 
@@ -23,8 +24,9 @@ class StaffTimesheet extends Component {
 
     componentDidMount() {
         this.refreshData()
-    }
-      
+    } 
+
+          
     refreshData = () => {
         let data = [];
         let postsMap = posts.map((employee,index)=>{
@@ -53,15 +55,26 @@ class StaffTimesheet extends Component {
         })
         let dates = []
         data.map ((dataObject, index) => {
-            if (!dates.includes(dataObject.date)){
-                dates.push(dataObject.date)
+            if (this.props.rotaOrTimes === "rota") { 
+                if (dataObject.rota) {
+                    if (!dates.includes(dataObject.date)){
+                        dates.push(dataObject.date)
+                    }
+                }
+            } else {
+                if (dataObject.times) {
+                    if (!dates.includes(dataObject.date)){
+                        dates.push(dataObject.date)
+                    } 
+                }
             }
+          
         })
         this.setState({data: data, dates: dates}) 
     }
 
 render() {
-     
+        let messageIfRowEmpty = ()=> {return (<tr><td>Staff meant to be in attendance but are not</td></tr>)};
         let tables = this.state.dates.map((date,index)=>{ 
             let checkDate = (dataObject) => {
                 return dataObject.date == date
@@ -70,21 +83,41 @@ render() {
             
             let rows = filteredObjects.map((dataObject,index)=>{ 
                 console.log (dataObject) 
-                if (dataObject.rota) {
-                    return (
-                        
-                        <tr key = {index}> 
-                            <td>{dataObject.name}</td> 
-                            <td>{dataToTimeString(dataObject.rota[0])}</td>
-                            <td>{dataToTimeString(dataObject.rota[1])}</td>
-                            <td>No</td> 
-                            <td>No</td> 
-                        </tr> 
-                    )
+                
+                if (this.props.rotaOrTimes === "rota") { 
+                    if (dataObject.rota) {
+                        return (
+                            
+                            <tr key = {index}> 
+                                <td>{dataObject.name}</td> 
+                                <td>{dataToTimeString(dataObject.rota[0])}</td>
+                                <td>{dataToTimeString(dataObject.rota[1])}</td>
+                                <td>No</td> 
+                                <td>No</td> 
+                            </tr> 
+                        )
+                    }
+                    else {
+                        return null
+                    }
+                }  else {
+                    if (dataObject.times) {
+                        return (
+                            
+                            <tr key = {index}> 
+                                <td>{dataObject.name}</td> 
+                                <td>{dataToTimeString(dataObject.times[0])}</td>
+                                <td>{dataToTimeString(dataObject.times[1])}</td>
+                                <td>No</td> 
+                                <td>No</td> 
+                            </tr> 
+                        )
+                    }
+                    else {
+                        return null
+                    } 
                 }
-                else {
-                    return null
-                }
+                
             }) 
             return (
                 <div>
@@ -102,7 +135,7 @@ render() {
                             </tr>
                         </thead>
                         <tbody>
-                            {rows} 
+                            {rows != null ? rows : messageIfRowEmpty}   
                         </tbody>
                     </table>
                     <br />

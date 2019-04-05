@@ -22,7 +22,7 @@ const HomeScreen = props => {
         <div>
           <div>{props.holidayRequest} <Link to="/holidayreq">Holiday Request</Link></div>
           <div>{props.timeSheet} <Link to="/timesheet">Timesheet</Link></div>
-          <StaffTimesheet />
+          <StaffTimesheet rotaOrTimes = {props.rotaOrTimes}/>
           <div>{props.ClockIn} Clock In</div>
         </div>
     );
@@ -33,7 +33,7 @@ const HomeScreen = props => {
       <div>
          <div>{props.holidayRequest} Holiday Request</div>
         <div>{props.timeSheet} Timesheet</div>
-          <StaffTimesheet />
+          <StaffTimesheet rotaOrTimes = {props.rotaOrTimes}/> 
         <div>{props.ClockIn} Clock In</div>
         <div>{props.staff} Staff</div>
       </div>
