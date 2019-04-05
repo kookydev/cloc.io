@@ -3,9 +3,11 @@ import posts from "../../../data/posts.json";
 import {dataToTimeString, dataToDayString, dataToDayNumber} from "../../user/RotaTimesheet/RotaTimesheet";
 import ViewDataForDate from "./ViewDataForDate";
 
+
 class StaffTimesheet extends Component {
     constructor(props){
         super(props) 
+        // Initial values of state. These will be overridden on componentDidMount.
         this.state = {
             data: [{
                 day: "Monday",
@@ -26,7 +28,7 @@ class StaffTimesheet extends Component {
         this.refreshData()
     } 
 
-          
+    // refreshData replaces data and dates in the state with information from the JSON file. 
     refreshData = () => {
         let data = [];
         let postsMap = posts.map((employee,index)=>{
@@ -72,9 +74,10 @@ class StaffTimesheet extends Component {
         })
         this.setState({data: data, dates: dates}) 
     }
-
+/* Within render we are rendering a table for every date in state.dates and within every table we are
+    rendering a row for every object within the state.data that matches that date.
+*/
 render() {
-        let messageIfRowEmpty = ()=> {return (<tr><td>Staff meant to be in attendance but are not</td></tr>)};
         let tables = this.state.dates.map((date,index)=>{ 
             let checkDate = (dataObject) => {
                 return dataObject.date == date
@@ -135,7 +138,7 @@ render() {
                             </tr>
                         </thead>
                         <tbody>
-                            {rows != null ? rows : messageIfRowEmpty}   
+                            {rows}   
                         </tbody>
                     </table>
                     <br />
