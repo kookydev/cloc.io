@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import Notification from './Notifications'
 
 class NotificationCont extends Component {
+    
     constructor(props) {
         super(props);
         this.state = { 
             notification: "Welcome to clock.io",
          }
+        
     }
 
     
