@@ -26,17 +26,18 @@ app.get("/express_backend", (req, res) => {
 });
 
 app.post("/createuser", (req, res) => {
-  console.log('test1')
   taskController.createNewUser(req, res);
 });
 
-
 app.get("/createuser/:userName&:password", (req, res) => {
-  console.log('test2')
   taskController.readUser(req, res);
 });
 
-// app.use('/static', express.static(path.join(__dirname, './client/build//static')));
+app.post("/home/rota", (req, res) => {
+  console.log('before')
+  taskController.createNewRota(req, res);
+  console.log('after')
+})
 
 app.get('*', (req, res, next) => {
  res.sendFile('/index.html')

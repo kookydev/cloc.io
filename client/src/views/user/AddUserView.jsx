@@ -1,5 +1,5 @@
 import React from "react";
-import AddUser from "../../components/user/AddUser/AddUser";
+import AddUser from "../../components/admin/AddUser/AddUser";
 
 const AddUserView = props => {
   return (

@@ -18,24 +18,31 @@ class App extends Component {
     auth_lvl: null,
     job_role: null,
     manager: null,
-    currentUser: 3,
-    rotaOrTimes: "rota"
+    forename_new: null,
+    surname_new: null,
+    username_new: null,
+    password_new: null,
+    auth_lvl_new: null,
+    job_role_new: null,
+    manager_new: null,
+    selected_username: null
   };
 
-  createUser = () => {
+  createUser = (event) => {
+    event.preventDefault();
     return fetch(`http://localhost:5000/createuser`, {
       method: "post",
       headers: {
         "Content-type": "application/json"
       },
       body: JSON.stringify({
-        forename: this.state.forename,
-        surname: this.state.surname,
-        username: this.state.username,
-        password: this.state.password,
-        auth_lvl: this.state.auth_lvl,
-        job_role: this.state.job_role,
-        manager: this.state.manager
+        forename: this.state.forename_new,
+        surname: this.state.surname_new,
+        username: this.state.username_new,
+        password: this.state.password_new,
+        auth_lvl: this.state.auth_lvl_new,
+        job_role: this.state.job_role_new,
+        manager: this.state.manager_new
       })
     });
   };
@@ -56,9 +63,7 @@ class App extends Component {
       })
       .then(data => {
         let returnData = JSON.parse(data);
-        console.log(returnData[0]);
         this.setState({ forename: returnData[0].forename, surname: returnData[0].surname, username: returnData[0].username, password: returnData[0].password, auth_lvl: returnData[0].auth_lvl, job_role: returnData[0].job_role, manager: returnData[0].manager });
-        console.log(this.state.auth_lvl);
       });
 
     // return console.log(this.state.username);

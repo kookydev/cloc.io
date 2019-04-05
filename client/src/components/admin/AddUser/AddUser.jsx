@@ -8,7 +8,7 @@ const AddUser = props => {
         <input
           placeholder="Forename"
           name="forename"
-          id="forename"
+          id="forename_new"
           value={props.value}
           onChange={props.handleChange}
         />
@@ -17,7 +17,7 @@ const AddUser = props => {
         <input
           placeholder="Surname"
           name="surname"
-          id="surname"
+          id="surname_new"
           value={props.value}
           onChange={props.handleChange}
         />
@@ -26,7 +26,7 @@ const AddUser = props => {
         <input
           placeholder="Forename"
           name="username"
-          id="username"
+          id="username_new"
           value={props.value}
           onChange={props.handleChange}
         />
@@ -36,13 +36,13 @@ const AddUser = props => {
           type="password"
           placeholder="Password"
           name="password"
-          id="password"
+          id="password_new"
           value={props.value}
           onChange={props.handleChange}
         />
         <br />
         Auth Level:
-        <select id="auth_lvl" value={props.value} onChange={props.handleChange}>
+        <select id="auth_lvl_new" value={props.value} onChange={props.handleChange}>
           <option value="default">Select...</option>
           <option value="1">User</option>
           <option value="2">Manager</option>
@@ -50,7 +50,7 @@ const AddUser = props => {
         </select>
         <br />
         Job role:
-        <select id="job_role" value={props.value} onChange={props.handleChange}>
+        <select id="job_role_new" value={props.value} onChange={props.handleChange}>
           <option value="default">Select...</option>
           <option value="programmer">Programmer</option>
           <option value="pa">Personal Assistant</option>
@@ -58,7 +58,7 @@ const AddUser = props => {
         </select>
         <br />
         Manager:
-        <select id="manager" value={props.value} onChange={props.handleChange}>
+        <select id="manager_new" value={props.value} onChange={props.handleChange}>
           <option value="default">Select...</option>
           <option value="connor">Connor</option>
           <option value="kyle">Kyle</option>

@@ -1,4 +1,6 @@
 const User = require("../models/User");
+const Rota = require("../models/Rota");
+
 
 exports.createNewUser = (req, res) => {
   let newUser = new User(req.body);
@@ -10,7 +12,6 @@ exports.createNewUser = (req, res) => {
     res.send(User);
     console.log(User);
   });
-
 };
 
 exports.readUser = (req, res) => {
@@ -24,5 +25,17 @@ exports.readUser = (req, res) => {
       console.log("User Not found")
     }
     res.send(user);
+  });
+};
+
+exports.createNewRota = (req, res) => {
+  let newRota = new Rota(req.body);
+  console.log(req.body);
+  newRota.save((err, Rota) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.send(Rota);
+    console.log(Rota);
   });
 };
