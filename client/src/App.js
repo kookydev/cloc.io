@@ -31,17 +31,23 @@ class App extends Component {
     ]
   }
 
+  handleApprove = (e) => {
+    console.log("approved")
+    this.HandleDelete(e)
+    console.log(e.target)
+  }
 
+  handleDecline = (e) => {
+    console.log("declined")
+    this.HandleDelete(e)
+  }
 
   HandleDelete = (e) => {
-    this.setState({data: this.state.data.filter(function(data) { 
-      console.log(data.id !== e.target.id )
-
+    this.setState({data: this.state.data.filter(function(data) {
       return data.id !== e.target.id
   })});
 }
 
-    
 
 render() {
   // const decline = () => {
@@ -56,8 +62,8 @@ render() {
         {request.userName}
         {request.startDate}
         {request.endDate}
-        <button id={request.id} onClick={this.HandleDelete}>Approve</button>
-        <button id={request.id} onClick={this.HandleDelete}>Decline</button>
+        <button id={request.id} onClick={this.handleApprove} value={}>Approve</button>
+        <button id={request.id} onClick={this.handleDecline}>Decline</button>
       </div>
     )
   })
