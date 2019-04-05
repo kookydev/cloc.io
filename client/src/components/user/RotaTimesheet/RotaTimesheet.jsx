@@ -100,4 +100,5 @@ let RotaTimesheet = (props) => {
     );
 }
 
-export default RotaTimesheet;
+export default RotaTimesheet
+export {dataToTimeString, dataToDayString, dataToDayNumber};
