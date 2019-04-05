@@ -1,29 +1,42 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import './HomeScreen.css'
 import RequestLeave from "../RequestLeave/RequestLeave";
 import RotaTimesheet from "../RotaTimesheet/RotaTimesheet";
 import ClockInOut from "../ClockInOut/ClockInOut"
 // import StaffOverview from "../../manager/StaffOverview/StaffOverview";
 // import ViewEditUsers from "../../admin/ViewEditUsers/ViewEditUsers"
 import AddUser from '../../admin/AddUser/AddUser';
+import Icon1 from '../../../holiday_logo.svg';
+import Icon2 from '../../../timesheet_logo.svg';
+import Icon3 from '../../../clockin_logo.svg';
+import Icon4 from '../../../staff_logo.svg';
+import Icon5 from '../../../adduser_logo.svg'
 
 const HomeScreen = props => {
   // If the authLevel passed in is 1
   if (props.auth_lvl === 1) {
     return (
       <Router>
-        <div>
-          <Link to="/holiday">Holiday Request</Link>
+        <div className="grid-container">
+        <img id="icon1" src={Icon1}/>
+          <Link className="holdiay" to="/holiday">Holiday Request</Link>
           <br />
-          <Link to="/timesheet">Timesheet</Link>
+          <img id="icon2" src={Icon2}/>
+          <Link className="timesheet" to="/timesheet">Timesheet</Link>
           <br />
-          <Link to="/clockinout">ClockIn</Link>
+          <img id="icon3" src={Icon3}/>
+          <Link className="clockin" to="/clockinout">ClockIn</Link>
 
           <Route path="/holiday" component={RequestLeave} />
           <Route path="/timesheet" component={RotaTimesheet} />
           <Route path="/clockinout" component={ClockInOut} />
         </div>
+        <div>
+          <div>{props.holidayRequest} <Link to="/holidayreq">Holiday Request</Link></div>
+          <div>{props.timeSheet} <Link to="/timesheet">Timesheet</Link></div>
+          <div>{props.ClockIn} Clock In</div>
+      </div>
       </Router>
     );
   }
@@ -31,14 +44,18 @@ const HomeScreen = props => {
   else if (props.auth_lvl === 2) {
     return (
       <Router>
-        <div>
-          <Link to="/home/holiday">Holiday Request</Link>
+        <div className="grid-container">
+        <img id="icon1" src={Icon1}/>
+          <Link className="holdiay" to="/home/holiday">Holiday Request</Link>
           <br />
-          <Link to="/home/timesheet">Timesheet</Link>
+          <img id="icon2" src={Icon2}/>
+          <Link className="timesheet" to="/home/timesheet">Timesheet</Link>
           <br />
-          <Link to="/home/clockinout">ClockIn</Link>
+          <img id="icon3" src={Icon3}/>
+          <Link className="clockin" to="/home/clockinout">ClockIn</Link>
           <br />
-          <Link to="/home/staff">Staff</Link>
+          <img id="icon4" src={Icon4}/>
+          <Link className="staff" to="/home/staff">Staff</Link>
 
           <Route path="/home/holiday" component={RequestLeave} />
           <Route path="/home/timesheet" component={RotaTimesheet} />
@@ -52,16 +69,23 @@ const HomeScreen = props => {
   else if (props.auth_lvl === 3) {
     return (
       <Router>
-        <div>
-          <Link to="/home/holiday">Holiday Request</Link>
+        
+        <div className="grid-container">
+        <div className="navbar"></div>
+        <img id="icon1" src={Icon1}/>
+          <Link className="holiday" to="/home/holiday">Holiday Request</Link>
           <br />
-          <Link to="/home/timesheet">Timesheet</Link>
+          <img id="icon2" src={Icon2}/>
+          <Link className="timesheet"to="/home/timesheet">Timesheet</Link>
           <br />
-          <Link to="/home/clockinout">ClockIn</Link>
+          <img id="icon3" src={Icon3}/>
+          <Link className="clockin" to="/home/clockinout">ClockIn</Link>
           <br />
-          <Link to="/home/staff">Staff</Link>
+          <img id="icon4" src={Icon4}/>
+          <Link className="staff" to="/home/staff">Staff</Link>
           <br />
-          <Link to="/home/createuser">Create User</Link>
+          <img id="icon5" src={Icon5}/>
+          <Link className="add" to="/home/createuser">Create User</Link>
 
           <Route path="/home/holiday" component={RequestLeave} />
           <Route path="/home/timesheet" component={RotaTimesheet} />
@@ -80,6 +104,7 @@ const HomeScreen = props => {
           Unauthorised, please click <Link to="/login">Here</Link> to login!
         </div>
       </div>
+      
     );
   }
 };

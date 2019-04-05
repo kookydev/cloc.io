@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900|Raleway");
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Raleway:700');
+
 
 :root {
   --main-color: linear-gradient(#00b0bb, #6ad9c4);
