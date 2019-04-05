@@ -146,7 +146,7 @@ render() {
             )}) 
         return (
             <div className = "stafftimesheet"> 
-                <h1>Staff Timesheet </h1> 
+                <h1> Staff {this.props.rotaOrTimes === "rota" ? "Rota" : "Timesheets"} </h1> 
                 {tables}
             </div>
         ) 
