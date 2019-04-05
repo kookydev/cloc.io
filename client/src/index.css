@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900|Raleway");
+
 :root {
   --main-color: linear-gradient(#00b0bb, #6ad9c4);
   --secondary-color: linear-gradient(to top, #cb2d3e, #ef473a);
@@ -20,9 +22,4 @@ body {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }

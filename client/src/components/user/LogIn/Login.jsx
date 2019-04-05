@@ -16,7 +16,7 @@ const Login = props => {
           <h2 className="employeeText">Employee ID:</h2>
           <input
             type="text"
-            className="employeeInput"
+            className="employeeInput fieldInput"
             placeholder="Enter Username"
             required
           />
@@ -24,7 +24,7 @@ const Login = props => {
           <h2 className="passwordText">Password:</h2>
           <input
             type="password"
-            className="passwordInput"
+            className="passwordInput fieldInput"
             placeholder="Enter Password"
             required
           />
@@ -36,7 +36,7 @@ const Login = props => {
             onClick={handleClick}
             href=" "
           >
-            Login
+            LOGIN
           </button>
           <br />
           <label>
