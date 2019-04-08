@@ -1,7 +1,7 @@
 import React from 'react';
 
 const test = (props) => {
-  console.log('fucked it');
+  console.log('censored it');
   // console.log(props.clockIn())
 }
 
