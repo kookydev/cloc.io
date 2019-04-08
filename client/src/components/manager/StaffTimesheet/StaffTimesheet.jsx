@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import posts from "../../../data/posts.json";
-import {dataToTimeString, dataToDayString, dataToDayNumber} from "../../user/RotaTimesheet/RotaTimesheet";
+import {dataToTimeString, dataToDayString, dataToDayNumber} from ".. /../user/RotaTimesheet/RotaTimesheet";
 import ViewDataForDate from "./ViewDataForDate";
 
 
@@ -57,25 +57,14 @@ class StaffTimesheet extends Component {
         })
         let dates = []
         data.map ((dataObject, index) => {
-            if (this.props.rotaOrTimes === "rota") { 
-                if (dataObject.rota) {
-                    if (!dates.includes(dataObject.date)){
-                        dates.push(dataObject.date)
-                    }
-                }
-            } else {
-                if (dataObject.times) {
-                    if (!dates.includes(dataObject.date)){
-                        dates.push(dataObject.date)
-                    } 
-                }
+            if (!dates.includes(dataObject.date)){
+                dates.push(dataObject.date)
             }
-          
         })
         this.setState({data: data, dates: dates}) 
     }
-/* Within render we are rendering a table for every date in state.dates and within every table we are
-    rendering a row for every object within the state.data that matches that date.
+/* Within render we are rendering a table for every date in state.dates and within every table
+    we are rendering a row for every object within the state.data that matches that date.
 */
 render() {
         let tables = this.state.dates.map((date,index)=>{ 
@@ -86,11 +75,8 @@ render() {
             
             let rows = filteredObjects.map((dataObject,index)=>{ 
                 console.log (dataObject) 
-                
-                if (this.props.rotaOrTimes === "rota") { 
-                    if (dataObject.rota) {
+                    if (dataObject[this.props.rotaOrTimes]) {
                         return (
-                            
                             <tr key = {index}> 
                                 <td>{dataObject.forename}</td> 
                                 <td>{dataToTimeString(dataObject.rota[0])}</td>
@@ -100,27 +86,7 @@ render() {
                             </tr> 
                         )
                     }
-                    else {
-                        return null
-                    }
-                }  else {
-                    if (dataObject.times) {
-                        return (
-                            
-                            <tr key = {index}> 
-                                <td>{dataObject.forename}</td> 
-                                <td>{dataToTimeString(dataObject.times[0])}</td>
-                                <td>{dataToTimeString(dataObject.times[1])}</td>
-                                <td>No</td> 
-                                <td>No</td> 
-                            </tr> 
-                        )
-                    }
-                    else {
-                        return null
-                    } 
-                }
-                
+                    else {return null}
             }) 
             return (
                 <div>
