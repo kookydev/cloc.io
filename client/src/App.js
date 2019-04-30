@@ -15,6 +15,8 @@ import NotificationCont from "./components/user/Notifications/NotificationCont"
 
 
 import ClockInOutCont from "./components/user/ClockInOut/ClockInOutCont"
+import ViewStaffView from "./views/user/ViewStaffView";
+import ClockInView from "./views/user/ClockInView";
 
 
 class App extends Component {
@@ -118,6 +120,8 @@ class App extends Component {
           <Route path="/home" render={homeScreenView} />
           <Route path="/createuser" render={addUserView} />
           <Route path="/login" render={loginView} />
+          <Route path="/staff" render={ViewStaffView} />
+          <Route path="/clockinout" rende={ClockInView} />
         </Router>
 
       </div>

@@ -12,6 +12,9 @@ import Icon2 from '../../../timesheet_logo.svg';
 import Icon3 from '../../../clockin_logo.svg';
 import Icon4 from '../../../staff_logo.svg';
 import Icon5 from '../../../adduser_logo.svg'
+import ViewStaffView from "../../../views/user/ViewStaffView";
+import RotaView from "../../../views/user/RotaTimesheetView";
+import ClockInView from "../../../views/user/ClockInView"
 
 const HomeScreen = props => {
   // If the authLevel passed in is 1
@@ -29,7 +32,7 @@ const HomeScreen = props => {
           <Link className="clockin" to="/clockinout">ClockIn</Link>
 
           <Route path="/holiday" component={RequestLeave} />
-          <Route path="/timesheet" component={RotaTimesheet} />
+          <Route path="/timesheet" component={RotaView} />
           <Route path="/clockinout" component={ClockInOut} />
         </div>
         <div>
@@ -55,12 +58,12 @@ const HomeScreen = props => {
           <Link className="clockin" to="/home/clockinout">ClockIn</Link>
           <br />
           <img id="icon4" src={Icon4}/>
-          <Link className="staff" to="/home/staff">Staff</Link>
+          <Link className="staff" to="/staff">Staff</Link>
 
           <Route path="/home/holiday" component={RequestLeave} />
           <Route path="/home/timesheet" component={RotaTimesheet} />
           <Route path="/home/clockinout" component={ClockInOut} />
-          <Route path="/home/staff" component={ClockInOut} />
+          <Route path="/staff" component={ViewStaffView} />
         </div>
       </Router>
     );
@@ -79,18 +82,18 @@ const HomeScreen = props => {
           <Link className="timesheet"to="/home/timesheet">Timesheet</Link>
           <br />
           <img id="icon3" src={Icon3}/>
-          <Link className="clockin" to="/home/clockinout">ClockIn</Link>
+          <Link className="clockin" to="/clockinout">ClockIn</Link>
           <br />
           <img id="icon4" src={Icon4}/>
-          <Link className="staff" to="/home/staff">Staff</Link>
+          <Link className="staff" to="/staff">Staff</Link>
           <br />
           <img id="icon5" src={Icon5}/>
           <Link className="add" to="/home/createuser">Create User</Link>
 
           <Route path="/home/holiday" component={RequestLeave} />
-          <Route path="/home/timesheet" component={RotaTimesheet} />
-          <Route path="/home/clockinout" component={ClockInOut} />
-          <Route path="/home/staff" component={ClockInOut} />
+          <Route path="/home/timesheet" component={RotaView} />
+          <Route path="/clockinout" component={ClockInView} />
+          <Route path="/staff" component={ViewStaffView} />
           <Route path="/home/createuser" component={AddUser} />
         </div>
       </Router>
