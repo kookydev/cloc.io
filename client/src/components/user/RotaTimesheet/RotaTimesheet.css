@@ -9,14 +9,14 @@ body {
 .table {
     background-color: var(--table-color);
     width: 95%;
-    height: 73vh;
-    margin-top: 150px;
+    height: 69vh;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: column;
     align-items: space-evenly;
-    line-height: 40px;
+    line-height: 50px;
     position: relative;
     
   }
@@ -25,6 +25,7 @@ body {
     font-family: var(--heading-text);
     font-weight: 900;
     text-align: center;
+    font-size: 20px;
     
 }
 
@@ -40,6 +41,7 @@ body {
     flex-direction: left;
     margin-left: 100px;
     font-weight: 700;
+    font-size: 20px
 
 
 }
@@ -51,22 +53,12 @@ body {
 }
 
 .rotaDetails {
-text-align: left;
+    text-align: left;
 }
 
-.button{
-    background-image: var(--secondary-color);
-    font-family: "Lato";
-    color: var(--secondary-text-color);
-    font-size: 35px;
-    padding-top: 8px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-weight: 700;
-    border-radius: 10px;
+.backButton {
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    left: 16px;
 }
-
-/* .button:hover {
-    color: var(--main-text-color);
-} */

@@ -9,4 +9,11 @@
     padding-right: 30px;
     font-weight: 700;
     border-radius: 10px;
+} 
+
+.button:focus {
+    outline: 0;
+}
+.button:active {
+transform: translateY(4px);
 }
