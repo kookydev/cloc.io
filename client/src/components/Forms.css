@@ -49,6 +49,16 @@ input:focus {
   font-family: var(--heading-text);
   font-weight: 600;
   outline: none;
+  box-shadow: 2px 2px 5px black;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.loginBtn:hover {
+  background-image: var(--secondary-color-hover);
+}
+
+.loginBtn:active {
+  box-shadow: 1px 1px 2px black;
 }
 
 input[type="button"],

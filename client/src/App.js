@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 // import TimeTable from "./components/user/Rota_Timesheet/TimeTable";
 import LoginView from "./views/user/LoginView";
@@ -11,11 +16,12 @@ import HomeScreen from "./components/user/HomeScreen/HomeScreen";
 import StaffDetails from "./components/manager/StaffDetails/StaffDetails";
 import UserData from "./data/posts.json";
 import StaffOverview from "./components/manager/StaffOverview/StaffOverview";
-import NotificationCont from "./components/user/Notifications/NotificationCont"
+import NotificationCont from "./components/user/Notifications/NotificationCont";
 
-
-import ClockInOutCont from "./components/user/ClockInOut/ClockInOutCont"
-
+import ClockInOutCont from "./components/user/ClockInOut/ClockInOutCont";
+import ViewStaffView from "./views/user/ViewStaffView";
+import ClockInView from "./views/user/ClockInView";
+import RotaView from "./views/user/RotaView";
 
 class App extends Component {
   state = {
@@ -36,7 +42,7 @@ class App extends Component {
     selected_username: null
   };
 
-  createUser = (event) => {
+  createUser = event => {
     event.preventDefault();
     return fetch(`http://localhost:5000/createuser`, {
       method: "post",
@@ -71,7 +77,15 @@ class App extends Component {
       })
       .then(data => {
         let returnData = JSON.parse(data);
-        this.setState({ forename: returnData[0].forename, surname: returnData[0].surname, username: returnData[0].username, password: returnData[0].password, auth_lvl: returnData[0].auth_lvl, job_role: returnData[0].job_role, manager: returnData[0].manager });
+        this.setState({
+          forename: returnData[0].forename,
+          surname: returnData[0].surname,
+          username: returnData[0].username,
+          password: returnData[0].password,
+          auth_lvl: returnData[0].auth_lvl,
+          job_role: returnData[0].job_role,
+          manager: returnData[0].manager
+        });
       });
 
     // return console.log(this.state.username);
@@ -109,17 +123,31 @@ class App extends Component {
     };
 
     const homeScreenView = props => {
-      return <HomeScreenView auth_lvl={this.state.auth_lvl} />;
+      return (
+        <HomeScreenView
+          auth_lvl={this.state.auth_lvl}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          compareDB={this.compareDB}
+          value={this.state.value}
+          username={this.state.username}
+        />
+      );
+    };
+    const timesheetView = props => {
+      return <RotaView />;
     };
 
     return (
       <div className="App">
         <Router>
-          <Route path="/home" render={homeScreenView} />
+          <Route exact path="/" render={homeScreenView} />
           <Route path="/createuser" render={addUserView} />
           <Route path="/login" render={loginView} />
+          <Route path="/staff" render={ViewStaffView} />
+          <Route path="/clockinout" render={ClockInView} />
+          <Route path="/timesheet" render={timesheetView} />
         </Router>
-
       </div>
     );
   }

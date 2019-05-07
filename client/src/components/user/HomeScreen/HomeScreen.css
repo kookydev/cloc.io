@@ -1,113 +1,113 @@
 body {
-    background-image: var(--main-color);
-    height: 100vh;
-    width: 100vw;
+  background-image: var(--main-color);
+  height: 100vh;
+  width: 100vw;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: 0.7fr 1.2fr 1.2fr 1.2fr 1.2fr 2.3fr 1.2fr;
-    grid-template-areas:
-        "navbar navbar"
-        "icon1 holiday"
-        "icon2 timesheet"
-        "icon3 clockin"
-        "icon4 staff"
-        ". ."
-        "icon5 add";
-    height: 100vh
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 0.7fr 1.2fr 1.2fr 1.2fr 1.2fr 2.3fr 1.2fr;
+  grid-template-areas:
+    "navbar navbar"
+    "icon1 holiday"
+    "icon2 timesheet"
+    "icon3 clockin"
+    "icon4 staff"
+    ". ."
+    "icon5 add";
+  height: 100vh;
 }
 
 .navbar {
-    grid-area: navbar;
-    background-color: #EEEEEE;
+  grid-area: navbar;
+  background-color: #eeeeee;
 }
 
 .holiday {
-    grid-area: holiday;
-    font-family: var(--body-text);
-    color: white;
-    text-align: left;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 25px;
-    font-weight: 900;
-    text-decoration: none;
+  grid-area: holiday;
+  font-family: var(--body-text);
+  color: white;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 25px;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .timesheet {
-    grid-area: timesheet;
-    font-family: var(--body-text);
-    color: white;
-    text-align: left;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 25px;
-    font-weight: 900;
-    text-decoration: none;
+  grid-area: timesheet;
+  font-family: var(--body-text);
+  color: white;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 25px;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .clockin {
-    grid-area: clockin;
-    font-family: var(--body-text);
-    color: white;
-    text-align: left;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 25px;
-    font-weight: 900;
-    text-decoration: none;
+  grid-area: clockin;
+  font-family: var(--body-text);
+  color: white;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 25px;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .staff {
-    grid-area: staff;
-    font-family: var(--body-text);
-    color: white;
-    text-align: left;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 25px;
-    font-weight: 900;
-    text-decoration: none;
+  grid-area: staff;
+  font-family: var(--body-text);
+  color: white;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 25px;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 #icon5 {
-    grid-area: icon5;
-    margin: auto;
+  grid-area: icon5;
+  margin: auto;
 }
 
 #icon4 {
-    grid-area: icon4;
-    color: white;
-    margin: auto;
-    height: 80px;
-    width: 80px;
+  grid-area: icon4;
+  color: white;
+  margin: auto;
+  height: 80px;
+  width: 80px;
 }
 
 #icon3 {
-    grid-area: icon3;
-    margin: auto;
-    width: 70px;
+  grid-area: icon3;
+  margin: auto;
+  width: 70px;
 }
 
 #icon2 {
-    grid-area: icon2;
-    margin: auto;
+  grid-area: icon2;
+  margin: auto;
 }
 
 #icon1 {
-    grid-area: icon1;
-    margin: auto;
+  grid-area: icon1;
+  margin: auto;
 }
 
 .add {
-    grid-area: add;
-    font-family: var(--body-text);
-    color: white;
-    text-align: left;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 25px;
-    text-decoration: none;
+  grid-area: add;
+  font-family: var(--body-text);
+  color: white;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 25px;
+  text-decoration: none;
 }

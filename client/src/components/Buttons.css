@@ -1,12 +1,17 @@
-.button{
-    background-image: var(--secondary-color);
-    font-family: "Lato";
-    color: var(--secondary-text-color);
-    font-size: 35px;
-    padding-top: 8px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-weight: 700;
-    border-radius: 10px;
+.button {
+  background-image: var(--secondary-color);
+  font-family: "Lato";
+  color: var(--secondary-text-color);
+  font-size: 35px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 10px 10px black;
+}
+
+.button :hover {
+  background-image: var(--secondary-color-hover);
 }
