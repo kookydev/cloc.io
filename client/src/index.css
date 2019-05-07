@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Raleway:700');
-
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900|Raleway:700");
 
 :root {
   --main-color: linear-gradient(#00b0bb, #6ad9c4);
   --secondary-color: linear-gradient(to top, #cb2d3e, #ef473a);
+  --secondary-color-hover: linear-gradient(to top, #ef473a, #e98d86);
   --main-text-color: #000;
   --secondary-text-color: #ebebeb;
   --tertiary-text-color: #ff0000;
